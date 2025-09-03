@@ -26,7 +26,7 @@ const services = [
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-800 text-white">
       {/* Call-to-Action Banner */}
       <div className="bg-[hsl(var(--brand))] py-12">
         <div className="container">
@@ -165,7 +165,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-6">Credentials</h3>
             <div className="space-y-4">
-              <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+              <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                 <div className="text-sm">
                   <p className="font-medium text-[hsl(var(--brand))] mb-1">Licensed & Insured</p>
                   <p className="text-gray-300 text-xs">Florida License # 299993274</p>
@@ -173,7 +173,7 @@ export function Footer() {
                 </div>
               </div>
               
-              <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+              <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                 <div className="text-sm">
                   <p className="font-medium text-[hsl(var(--brand))] mb-1">24/7 Availability</p>
                   <p className="text-gray-300 text-xs">Emergency on-call services</p>
@@ -203,7 +203,7 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-800 bg-gray-950">
+      <div className="border-t border-gray-700 bg-gray-900">
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <div className="text-center md:text-left">

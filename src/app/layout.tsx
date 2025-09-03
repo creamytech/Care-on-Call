@@ -4,6 +4,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { BackToTop } from '@/components/back-to-top'
 import { CallBar } from '@/components/call-bar'
+import { PageTransition } from '@/components/page-transition'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 
@@ -120,8 +121,10 @@ export default function RootLayout({
         
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main id="main-content" className="flex-1 page-transition pb-16 md:pb-0 transition-opacity duration-300 ease-in-out">
-            {children}
+          <main id="main-content" className="flex-1 pb-16 md:pb-0">
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
           <Footer />
           <BackToTop />
