@@ -1,6 +1,5 @@
 'use client'
 
-import type { Metadata } from 'next'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -8,11 +7,7 @@ import { Users, Heart, Award, Briefcase, DollarSign, Clock, ChevronDown, Chevron
 import { CareerApplicationForm } from '@/components/career-application-form'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'Healthcare Careers - Join Our Team | Care on Call Home Healthcare',
-  description: 'Join Care on Call Home Healthcare team in Fort Lauderdale, FL. We offer competitive compensation, flexible schedules, and rewarding healthcare careers. RN, LPN, CNA, and HHA positions available.',
-  keywords: 'healthcare careers, nursing jobs Florida, home healthcare jobs, RN jobs, LPN jobs, CNA jobs, HHA jobs, Fort Lauderdale healthcare careers',
-}
+// Metadata is handled by the parent layout for client components
 
 const benefits = [
   {
