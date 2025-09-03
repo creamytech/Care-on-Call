@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Linkedin } from 'lucide-react'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Our Services', href: '/services' },
   { name: 'Careers', href: '/careers' },
+  { name: 'FAQ', href: '/faq' },
   { name: 'Contact Us', href: '/contact' },
   { name: 'Non-Discrimination Policy', href: '/nondiscrimination' },
   { name: 'Privacy Policy', href: '/privacy' },
@@ -93,6 +94,29 @@ export function Footer() {
             <div>
               <p>&copy; {new Date().getFullYear()} Care on Call Home Healthcare. All rights reserved.</p>
             </div>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center space-x-4 mt-2 md:mt-0">
+              <a
+                href="https://www.facebook.com/CareOnCallHomeHealthcare"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-brand transition-colors duration-200"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/care-on-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-brand transition-colors duration-200"
+                aria-label="Connect with us on LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
+            
             <div className="mt-2 md:mt-0">
               <p>Locally owned and operated in Fort Lauderdale, Florida</p>
             </div>

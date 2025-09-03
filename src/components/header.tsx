@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About Us', href: '/about' },
   { name: 'Our Services', href: '/services' },
   { name: 'Career Opportunities', href: '/careers' },
-  { name: 'Client Satisfaction Survey', href: '/survey' },
+  { name: 'FAQ', href: '/faq' },
   { name: 'Contact Us', href: '/contact' },
 ]
 
@@ -49,7 +49,7 @@ export function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav id="navigation" className="hidden md:flex space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -80,11 +80,12 @@ export function Header() {
           <div className="lg:hidden">
             <button
               type="button"
-              className="text-gray-700 hover:text-brand"
+              className="p-2 text-gray-700 hover:text-brand hover:bg-gray-100 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-expanded="false"
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{mobileMenuOpen ? 'Close' : 'Open'} main menu</span>
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" />
               ) : (
@@ -103,7 +104,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-md transition-colors duration-200"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

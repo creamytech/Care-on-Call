@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Heart, Shield, Users, Phone, Award, MapPin } from 'lucide-react'
+import { Heart, Shield, Users, Phone, Award, MapPin, Star } from 'lucide-react'
 
 const services = [
   {
@@ -34,6 +34,27 @@ const trustFeatures = [
   'Extensive background checks and screening',
   '24/7 nurse availability for urgent situations',
   'Cost-saving care packages available',
+]
+
+const testimonials = [
+  {
+    name: 'Maria Rodriguez',
+    location: 'Fort Lauderdale, FL',
+    text: 'Care on Call provided exceptional care for my mother. The nurses were professional, caring, and always available when we needed them. Highly recommend!',
+    rating: 5
+  },
+  {
+    name: 'John Thompson',
+    location: 'Davie, FL',
+    text: 'Outstanding service! The physical therapist helped my father regain his mobility after surgery. The entire team was compassionate and skilled.',
+    rating: 5
+  },
+  {
+    name: 'Lisa Chen',
+    location: 'Plantation, FL',
+    text: 'We couldn\'t be happier with Care on Call. They made it possible for my grandmother to stay at home comfortably. Professional and reliable service.',
+    rating: 5
+  }
 ]
 
 export default function Home() {
@@ -132,6 +153,43 @@ export default function Home() {
             <Button size="lg" asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
               <Link href="/services">View All Services</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+              What Our Families Say
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hear from the families we've had the privilege to serve throughout Broward County
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={testimonial.name} className={`hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'}`}>
+                <CardHeader>
+                  <div className="flex items-center space-x-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <CardDescription className="text-base italic">
+                    "{testimonial.text}"
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-sm">
+                    <p className="font-semibold text-brand">{testimonial.name}</p>
+                    <p className="text-gray-500">{testimonial.location}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
