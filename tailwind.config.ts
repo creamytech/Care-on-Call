@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#2563eb', // Modern blue with better contrast
+          DEFAULT: '#1e40af', // Darker blue for better contrast
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',

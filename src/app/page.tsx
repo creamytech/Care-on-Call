@@ -57,21 +57,22 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Care on Call Home Healthcare
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in [animation-delay:200ms]">
+            <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in [animation-delay:200ms]">
               Home Care That Exceeds Expectations
             </p>
-            <p className="text-lg mb-12 text-blue-50 animate-fade-in [animation-delay:400ms]">
+            <p className="text-lg mb-12 text-gray-100 animate-fade-in [animation-delay:400ms]">
               Providing quality in-home care services in Broward County, Florida. 
               Licensed, trusted, and locally owned and operated.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:600ms]">
-              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <a href="tel:954-358-5001">
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call (954) 358-5001
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:600ms] px-4">
+              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
+                <a href="tel:954-358-5001" className="flex items-center justify-center">
+                  <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Call (954) 358-5001</span>
+                  <span className="sm:hidden">Call Us</span>
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-white text-brand border-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
+              <Button size="lg" variant="outline" className="bg-white text-brand border-2 border-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap" asChild>
                 <Link href="/refer">Refer a Client</Link>
               </Button>
             </div>
@@ -143,7 +144,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-brand mb-6">
                 Care You Can Trust
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-700 mb-8">
                 Care on Call Home Healthcare is a provider of quality in-home care services 
                 in Broward County, Florida. We offer credentialed healthcare professionals 
                 with extensive screening including licensure verification, criminal background 
@@ -153,7 +154,7 @@ export default function Home() {
                 {trustFeatures.map((feature) => (
                   <li key={feature} className="flex items-start">
                     <Award className="h-5 w-5 text-brand mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-800">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -166,11 +167,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-brand mb-4">
                   Serving Broward County
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-700 mb-6">
                   Located in Fort Lauderdale, we provide live-in assistance 
                   and credentialed aides for full-time, ongoing care at reduced daily rates.
                 </p>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-gray-600">
                   <p>211 East Prospect Road, NE 44th St.</p>
                   <p>Fort Lauderdale, FL 33334</p>
                   <p className="mt-2">License # 299993274</p>
@@ -188,7 +189,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-brand mb-4">
               Trusted & Accredited
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-700">
               Licensed by the State of Florida and accredited by leading healthcare organizations
             </p>
           </div>
@@ -266,18 +267,19 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Ready to Get Started?
             </h2>
-            <p className="text-lg mb-8 text-blue-50 animate-fade-in [animation-delay:200ms]">
+            <p className="text-lg mb-8 text-gray-100 animate-fade-in [animation-delay:200ms]">
               Contact us today to learn more about our quality in-home healthcare services 
               or to refer a client to our care.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
-              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl bg-white text-brand hover:bg-gray-100">
-                <a href="tel:877-255-9090">
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call Toll Free 1-877-255-9090
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms] px-4">
+              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl bg-white text-brand hover:bg-gray-100 whitespace-nowrap">
+                <a href="tel:877-255-9090" className="flex items-center justify-center">
+                  <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
+                  <span className="hidden sm:inline">Call Toll Free 1-877-255-9090</span>
+                  <span className="sm:hidden">Call Toll Free</span>
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-brand transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap" asChild>
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>

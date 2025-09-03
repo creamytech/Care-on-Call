@@ -63,21 +63,21 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:954-358-5001"
-              className="flex items-center text-brand hover:text-brand-600 font-semibold"
+              className="flex items-center text-brand hover:text-brand-700 font-semibold whitespace-nowrap text-sm"
             >
-              <Phone className="h-4 w-4 mr-2" />
+              <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
               (954) 358-5001
             </a>
-            <Button asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+            <Button asChild size="sm" className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap">
               <Link href="/refer">Refer a Client</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               type="button"
               className="text-gray-700 hover:text-brand"
@@ -97,7 +97,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 animate-slide-in">
+        <div className="lg:hidden border-t border-gray-200 animate-slide-in">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm">
             {navigation.map((item) => (
               <Link
