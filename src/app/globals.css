@@ -25,13 +25,24 @@ html {
 
 @layer base {
   :root {
-    --brand: #004080;
-    --brand-foreground: #ffffff;
-    --brand-light: #b3d9ff;
-    --brand-dark: #003366;
-    --accent: #0066cc;
-    --muted: #f8fafc;
-    --muted-foreground: #64748b;
+    /* Brand colors converted to HSL */
+    --brand: 210 100% 25%;        /* #004080 */
+    --brand-fg: 0 0% 100%;        /* #ffffff */
+    --brand-light: 210 100% 85%;  /* #b3d9ff */
+    --brand-dark: 210 100% 20%;   /* #003366 */
+    --brand-700: 210 100% 22%;    /* slightly lighter than dark */
+    
+    /* UI colors */
+    --muted: 210 16% 98%;         /* #f8fafc */
+    --muted-foreground: 215 16% 47%;  /* #64748b */
+    --card: 0 0% 100%;
+    --border: 210 20% 90%;
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+    
+    /* Interactive states */
+    --ring: 210 100% 25%;
+    --focus: 210 100% 50%;
   }
 
   html {
@@ -44,7 +55,30 @@ html {
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold;
-    color: var(--brand);
+    color: hsl(var(--brand));
+  }
+
+  /* Typography scale */
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
+  
+  /* Content width constraint for readability */
+  .prose {
+    max-width: 65ch;
+  }
+  
+  /* Section spacing */
+  .section-spacing {
+    @apply py-16 md:py-24;
   }
 
   .container {

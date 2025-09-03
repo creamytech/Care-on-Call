@@ -19,7 +19,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-50 transition-all duration-300">
+    <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-black/5 supports-[backdrop-filter]:bg-white/60 transition-all duration-300">
       <div className="container">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -65,8 +65,8 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:954-358-5001"
-              className="flex items-center text-brand hover:text-brand-700 font-semibold whitespace-nowrap text-sm"
+              href="tel:+19543585001"
+              className="flex items-center text-[hsl(var(--brand))] hover:text-[hsl(var(--brand-700))] font-semibold whitespace-nowrap text-sm transition-colors duration-200"
             >
               <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
               (954) 358-5001
@@ -85,7 +85,7 @@ export function Header() {
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
             >
-              <span className="sr-only">{mobileMenuOpen ? 'Close' : 'Open'} main menu</span>
+              <span className="sr-only">{mobileMenuOpen ? 'Close' : 'Open'} menu</span>
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" />
               ) : (
@@ -112,8 +112,8 @@ export function Header() {
             ))}
             <div className="px-3 py-2 border-t border-gray-200 mt-2">
               <a
-                href="tel:954-358-5001"
-                className="flex items-center text-brand hover:text-brand-600 font-semibold mb-3"
+                href="tel:+19543585001"
+                className="flex items-center text-[hsl(var(--brand))] hover:text-[hsl(var(--brand-700))] font-semibold mb-3 transition-colors duration-200"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 (954) 358-5001

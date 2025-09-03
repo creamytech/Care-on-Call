@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Heart, Shield, Users, Phone, Award, MapPin, Star } from 'lucide-react'
+import { Heart, Shield, Users, Phone, Award, MapPin, Star, Check } from 'lucide-react'
 
 const services = [
   {
@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-brand to-brand-700 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-[hsl(var(--brand))] to-[hsl(var(--brand-700))] text-white section-spacing overflow-hidden">
         {/* Background image - will show when you add homepage-hero.jpg */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -86,16 +86,22 @@ export default function Home() {
               Licensed, trusted, and locally owned and operated.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:600ms] px-4">
-              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
-                <a href="tel:954-358-5001" className="flex items-center justify-center">
+              <a 
+                href="tel:+19543585001" 
+                className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                <span className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Call (954) 358-5001</span>
                   <span className="sm:hidden">Call Us</span>
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-white text-brand border-2 border-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap" asChild>
-                <Link href="/refer">Refer a Client</Link>
-              </Button>
+                </span>
+              </a>
+              <Link 
+                href="/refer" 
+                className="h-12 px-8 py-3 rounded-lg border-2 border-white text-white font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                Refer a Client
+              </Link>
             </div>
           </div>
         </div>
@@ -103,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-spacing bg-[hsl(var(--muted))]">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
@@ -114,38 +120,35 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <Card key={service.title} className={`text-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'} group`}>
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 mb-4 relative">
-                    {/* Service image - will show when you add service icons */}
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} icon`}
-                      width={64}
-                      height={64}
-                      className="mx-auto"
-                      onError={(e) => {
-                        // Hide image and show icon fallback if image not found
-                        e.currentTarget.style.display = 'none';
-                        const sibling = e.currentTarget.nextElementSibling as HTMLElement;
-                        if (sibling) sibling.style.display = 'flex';
-                      }}
-                    />
-                    {/* Fallback icon */}
-                    <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mx-auto hidden group-hover:bg-brand/20 transition-colors duration-300">
-                      <service.icon className="h-6 w-6 text-brand group-hover:text-brand-700 transition-colors duration-300" />
-                    </div>
+              <article key={service.title} className={`group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'}`}>
+                <div className="mb-4">
+                  {/* Service image - will show when you add service icons */}
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} icon`}
+                    width={48}
+                    height={48}
+                    className="mb-4"
+                    onError={(e) => {
+                      // Hide image and show icon fallback if image not found
+                      e.currentTarget.style.display = 'none';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (sibling) sibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback icon */}
+                  <div className="w-12 h-12 bg-[hsl(var(--brand))]/10 rounded-lg flex items-center justify-center hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
+                    <service.icon className="h-6 w-6 text-[hsl(var(--brand))] group-hover:text-[hsl(var(--brand-700))] transition-colors duration-300" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">{service.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-[hsl(var(--brand))] font-medium">
+                  Learn more <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </span>
+              </article>
             ))}
           </div>
           
@@ -195,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20">
+      <section className="section-spacing">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -208,18 +211,20 @@ export default function Home() {
                 with extensive screening including licensure verification, criminal background 
                 checks, and competency testing.
               </p>
-              <ul className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {trustFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start">
-                    <Award className="h-5 w-5 text-brand mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-gray-800">{feature}</span>
-                  </li>
+                  <div key={feature} className="flex items-start">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-800 text-sm">{feature}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-            <div className="bg-brand/5 p-8 rounded-lg">
+            <div className="bg-[hsl(var(--brand))]/5 p-8 rounded-lg">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[hsl(var(--brand))] rounded-full mb-6">
                   <MapPin className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-brand mb-4">
@@ -252,73 +257,75 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
+          <div className="flex flex-wrap justify-center items-center gap-12">
             {/* ACHC Gold Seal */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center group cursor-pointer">
               <Image
                 src="/images/trust/achc-seal.png"
                 alt="ACHC Gold Seal of Approval"
                 width={80}
                 height={80}
-                className="mb-2"
-                onError={(e) => e.currentTarget.style.display = 'none'}
+                className="mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (sibling) sibling.style.display = 'flex';
+                }}
               />
-              <span className="text-xs text-gray-500 text-center">ACHC<br/>Accredited</span>
+              {/* Fallback badge */}
+              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
+                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
+              </div>
+              <span className="text-sm text-gray-600 text-center font-medium">ACHC<br/>Accredited</span>
             </div>
             
             {/* Medicare Certified */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center group cursor-pointer">
               <Image
                 src="/images/trust/medicare-certified.png"
                 alt="Medicare Certified"
                 width={80}
                 height={80}
-                className="mb-2"
-                onError={(e) => e.currentTarget.style.display = 'none'}
+                className="mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (sibling) sibling.style.display = 'flex';
+                }}
               />
-              <span className="text-xs text-gray-500 text-center">Medicare<br/>Certified</span>
+              {/* Fallback badge */}
+              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
+                <Shield className="h-10 w-10 text-[hsl(var(--brand))]" />
+              </div>
+              <span className="text-sm text-gray-600 text-center font-medium">Medicare<br/>Certified</span>
             </div>
             
             {/* Florida Licensed */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center group cursor-pointer">
               <Image
                 src="/images/trust/florida-licensed.png"
                 alt="Florida Licensed"
                 width={80}
                 height={80}
-                className="mb-2"
-                onError={(e) => e.currentTarget.style.display = 'none'}
+                className="mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (sibling) sibling.style.display = 'flex';
+                }}
               />
-              <span className="text-xs text-gray-500 text-center">Florida<br/>Licensed</span>
-            </div>
-            
-            {/* Fallback text badges when images not available */}
-            <div className="flex gap-6 text-sm text-gray-600">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-2">
-                  <Award className="h-8 w-8 text-brand" />
-                </div>
-                <span>ACHC Accredited</span>
+              {/* Fallback badge */}
+              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
+                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-2">
-                  <Shield className="h-8 w-8 text-brand" />
-                </div>
-                <span>Medicare Certified</span>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-2">
-                  <Award className="h-8 w-8 text-brand" />
-                </div>
-                <span>FL Licensed #299993274</span>
-              </div>
+              <span className="text-sm text-gray-600 text-center font-medium">FL Licensed<br/>#299993274</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-brand to-brand-800 text-white relative overflow-hidden">
+      <section className="section-spacing bg-gradient-to-r from-[hsl(var(--brand))] to-[hsl(var(--brand-700))] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -330,16 +337,22 @@ export default function Home() {
               or to refer a client to our care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms] px-4">
-              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl bg-white text-brand hover:bg-gray-100 whitespace-nowrap">
-                <a href="tel:877-255-9090" className="flex items-center justify-center">
+              <a 
+                href="tel:+18772559090" 
+                className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                <span className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
                   <span className="hidden sm:inline">Call Toll Free 1-877-255-9090</span>
                   <span className="sm:hidden">Call Toll Free</span>
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap" asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+                </span>
+              </a>
+              <Link 
+                href="/contact" 
+                className="h-12 px-8 py-3 rounded-lg border-2 border-white text-white font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
