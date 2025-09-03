@@ -107,7 +107,8 @@ export default function Home() {
                       onError={(e) => {
                         // Hide image and show icon fallback if image not found
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling!.style.display = 'flex';
+                        const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (sibling) sibling.style.display = 'flex';
                       }}
                     />
                     {/* Fallback icon */}

@@ -37,7 +37,8 @@ export function Header() {
                   onError={(e) => {
                     // Hide image and show text fallback if logo not found
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling!.style.display = 'block';
+                    const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (sibling) sibling.style.display = 'block';
                   }}
                 />
                 <div className="text-2xl font-bold text-brand hidden">
