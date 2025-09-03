@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Users, Heart, Award, Briefcase, DollarSign, Clock } from 'lucide-react'
 import { CareerApplicationForm } from '@/components/career-application-form'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Healthcare Careers - Join Our Team | Care on Call Home Healthcare',
+  description: 'Join Care on Call Home Healthcare team in Fort Lauderdale, FL. We offer competitive compensation, flexible schedules, and rewarding healthcare careers. RN, LPN, CNA, and HHA positions available.',
+  keywords: 'healthcare careers, nursing jobs Florida, home healthcare jobs, RN jobs, LPN jobs, CNA jobs, HHA jobs, Fort Lauderdale healthcare careers',
+}
 
 const benefits = [
   {

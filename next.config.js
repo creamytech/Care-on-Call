@@ -15,6 +15,8 @@ const nextConfig = {
     // Optimize images for better performance
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
+    // Allow unoptimized images for development and static images
+    unoptimized: process.env.NODE_ENV === 'development',
     // Add allowed domains if you're loading images from external sources
     remotePatterns: [
       // Add patterns here if loading images from external domains

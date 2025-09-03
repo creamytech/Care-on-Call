@@ -1,7 +1,14 @@
+import type { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Shield, Award, Users, Heart, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'About Us - Care on Call Home Healthcare | Licensed Florida Healthcare Provider',
+  description: 'Learn about Care on Call Home Healthcare, a licensed, locally-owned provider of quality in-home healthcare services in Broward County, Florida. Professional excellence since 1995.',
+  keywords: 'about Care on Call, licensed healthcare provider, home healthcare Fort Lauderdale, Florida healthcare services',
+}
 
 const qualityFeatures = [
   {

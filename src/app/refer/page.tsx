@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import toast from 'react-hot-toast'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -92,11 +93,14 @@ export default function ReferralPage() {
       if (response.ok) {
         setSubmitStatus('success')
         form.reset()
+        toast.success('Thank you for your referral! We\'ll contact you and the client soon.')
       } else {
         setSubmitStatus('error')
+        toast.error('There was an error submitting your referral. Please try again.')
       }
     } catch (error) {
       setSubmitStatus('error')
+      toast.error('There was an error submitting your referral. Please try again.')
     } finally {
       setIsSubmitting(false)
     }

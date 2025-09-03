@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-50 transition-all duration-300">
       <div className="container">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -30,9 +30,9 @@ export function Header() {
                 <Image
                   src="/images/logos/care-on-call-logo.png"
                   alt="Care on Call Home Healthcare"
-                  width={200}
-                  height={60}
-                  className="h-10 w-auto"
+                  width={280}
+                  height={80}
+                  className="h-14 w-auto"
                   priority
                   onError={(e) => {
                     // Hide image and show text fallback if logo not found

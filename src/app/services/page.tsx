@@ -1,7 +1,14 @@
+import type { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Stethoscope, Activity, Users, Heart, Clock, Shield } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Healthcare Services - Nursing, Therapy & Home Care | Care on Call Florida',
+  description: 'Comprehensive home healthcare services in Broward County: skilled nursing, physical therapy, occupational therapy, speech therapy, and custodial care. Licensed professionals available 24/7.',
+  keywords: 'home healthcare services, nursing services, physical therapy, occupational therapy, speech therapy, custodial care, Fort Lauderdale',
+}
 
 const nursingServices = {
   icon: Stethoscope,

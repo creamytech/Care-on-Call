@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import toast from 'react-hot-toast'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -147,11 +148,14 @@ export function CareerApplicationForm() {
         if (fileInputRef.current) {
           fileInputRef.current.value = ''
         }
+        toast.success('Thank you for your application! We\'ll review it and get back to you soon.')
       } else {
         setSubmitStatus('error')
+        toast.error('There was an error submitting your application. Please try again.')
       }
     } catch (error) {
       setSubmitStatus('error')
+      toast.error('There was an error submitting your application. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
