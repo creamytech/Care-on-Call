@@ -19,7 +19,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-50 transition-all duration-300">
       <div className="container">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -54,9 +54,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-brand transition-colors duration-200 text-sm font-medium"
+                className="text-gray-700 hover:text-brand transition-all duration-300 text-sm font-medium relative group py-2"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
@@ -70,7 +71,7 @@ export function Header() {
               <Phone className="h-4 w-4 mr-2" />
               (954) 358-5001
             </a>
-            <Button asChild>
+            <Button asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
               <Link href="/refer">Refer a Client</Link>
             </Button>
           </div>
@@ -96,8 +97,8 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+        <div className="md:hidden border-t border-gray-200 animate-slide-in">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm">
             {navigation.map((item) => (
               <Link
                 key={item.name}

@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-brand to-brand-600 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-brand to-brand-700 text-white py-20 overflow-hidden">
         {/* Background image - will show when you add homepage-hero.jpg */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -54,24 +54,24 @@ export default function Home() {
         <div className="relative z-10">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Care on Call Home Healthcare
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in [animation-delay:200ms]">
               Home Care That Exceeds Expectations
             </p>
-            <p className="text-lg mb-12 text-blue-100">
+            <p className="text-lg mb-12 text-blue-50 animate-fade-in [animation-delay:400ms]">
               Providing quality in-home care services in Broward County, Florida. 
               Licensed, trusted, and locally owned and operated.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:600ms]">
+              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <a href="tel:954-358-5001">
                   <Phone className="h-5 w-5 mr-2" />
                   Call (954) 358-5001
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-white text-brand border-white hover:bg-gray-50" asChild>
+              <Button size="lg" variant="outline" className="bg-white text-brand border-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
                 <Link href="/refer">Refer a Client</Link>
               </Button>
             </div>
@@ -93,8 +93,8 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <Card key={service.title} className="text-center hover:shadow-lg transition-shadow">
+            {services.map((service, index) => (
+              <Card key={service.title} className={`text-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'} group`}>
                 <CardHeader>
                   <div className="mx-auto w-16 h-16 mb-4 relative">
                     {/* Service image - will show when you add service icons */}
@@ -112,8 +112,8 @@ export default function Home() {
                       }}
                     />
                     {/* Fallback icon */}
-                    <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mx-auto hidden">
-                      <service.icon className="h-6 w-6 text-brand" />
+                    <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mx-auto hidden group-hover:bg-brand/20 transition-colors duration-300">
+                      <service.icon className="h-6 w-6 text-brand group-hover:text-brand-700 transition-colors duration-300" />
                     </div>
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
@@ -259,24 +259,25 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand text-white">
-        <div className="container">
+      <section className="py-20 bg-gradient-to-r from-brand to-brand-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
               Ready to Get Started?
             </h2>
-            <p className="text-lg mb-8 text-blue-100">
+            <p className="text-lg mb-8 text-blue-50 animate-fade-in [animation-delay:200ms]">
               Contact us today to learn more about our quality in-home healthcare services 
               or to refer a client to our care.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
+              <Button size="lg" variant="secondary" asChild className="transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl bg-white text-brand hover:bg-gray-100">
                 <a href="tel:877-255-9090">
                   <Phone className="h-5 w-5 mr-2" />
                   Call Toll Free 1-877-255-9090
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-brand" asChild>
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-brand transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
