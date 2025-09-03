@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: #004080;
+    --brand-foreground: #ffffff;
+    --brand-light: #b3d9ff;
+    --brand-dark: #003366;
+    --accent: #0066cc;
+    --muted: #f8fafc;
+    --muted-foreground: #64748b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    color: var(--brand);
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+    background-color: var(--brand);
+    color: var(--brand-foreground);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--brand-dark);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-medium border-2 transition-colors duration-200;
+    background-color: white;
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--brand-light);
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md border border-gray-200;
+  }
+}
