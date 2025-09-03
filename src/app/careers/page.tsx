@@ -1,7 +1,10 @@
+'use client'
+
 import type { Metadata } from 'next'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Users, Heart, Award, Briefcase, DollarSign, Clock } from 'lucide-react'
+import { Users, Heart, Award, Briefcase, DollarSign, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 import { CareerApplicationForm } from '@/components/career-application-form'
 import Link from 'next/link'
 
@@ -118,19 +121,28 @@ const positions = [
 ]
 
 export default function CareersPage() {
+  const [expandedPositions, setExpandedPositions] = useState<{[key: string]: boolean}>({})
+
+  const togglePosition = (positionTitle: string) => {
+    setExpandedPositions(prev => ({
+      ...prev,
+      [positionTitle]: !prev[positionTitle]
+    }))
+  }
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-50 to-brand-100 py-20">
+      <section className="bg-gradient-to-r from-[hsl(var(--brand))]/5 to-[hsl(var(--brand))]/10 section-spacing">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-brand mb-6">
+            <h1 className="mb-6">
               Career Opportunities
             </h1>
             <p className="text-xl text-gray-700 mb-8">
               There may be a career waiting for you at Care on Call Home Healthcare
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-3xl mx-auto mb-8">
               Join our team of dedicated healthcare professionals and make a meaningful 
               difference in the lives of patients and families throughout Broward County, Florida.
             </p>
@@ -142,13 +154,13 @@ export default function CareersPage() {
       </section>
 
       {/* Why Work With Us */}
-      <section className="py-20">
+      <section className="section-spacing">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+            <h2 className="mb-4">
               Why Choose Care on Call?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
               We're committed to providing a supportive work environment where 
               healthcare professionals can thrive and grow in their careers.
             </p>
@@ -156,10 +168,10 @@ export default function CareersPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={benefit.title} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 border border-black/10">
                 <CardHeader>
-                  <div className="mx-auto w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
-                    <benefit.icon className="h-6 w-6 text-brand" />
+                  <div className="mx-auto w-12 h-12 bg-[hsl(var(--brand))]/10 rounded-lg flex items-center justify-center mb-4">
+                    <benefit.icon className="h-6 w-6 text-[hsl(var(--brand))]" />
                   </div>
                   <CardTitle className="text-lg">{benefit.title}</CardTitle>
                 </CardHeader>
@@ -175,83 +187,104 @@ export default function CareersPage() {
       </section>
 
       {/* Available Positions */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-spacing bg-gray-50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+            <h2 className="mb-4">
               Current Opportunities
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
               We're always looking for qualified healthcare professionals to join our growing team.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto space-y-4">
             {positions.map((position) => (
-              <Card key={position.title} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center mb-2">
-                    <Briefcase className="h-5 w-5 text-brand mr-2" />
-                    <CardTitle className="text-lg">{position.title}</CardTitle>
+              <div key={position.title} className="bg-white rounded-2xl border border-black/10 shadow-sm">
+                <button
+                  onClick={() => togglePosition(position.title)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50/50 transition-colors duration-200 rounded-t-2xl"
+                  aria-expanded={expandedPositions[position.title]}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-[hsl(var(--brand))]/10 rounded-lg flex items-center justify-center mr-4">
+                      <Briefcase className="h-5 w-5 text-[hsl(var(--brand))]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-[hsl(var(--brand))]">{position.title}</h3>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))] mt-1">{position.description}</p>
+                    </div>
                   </div>
-                  <CardDescription className="text-base">
-                    {position.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <h4 className="font-semibold text-brand mb-3">Requirements:</h4>
-                  <ul className="space-y-1">
-                    {position.requirements.map((req) => (
-                      <li key={req} className="flex items-start text-sm">
-                        <div className="w-1.5 h-1.5 bg-brand rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                  {expandedPositions[position.title] ? (
+                    <ChevronUp className="h-5 w-5 text-[hsl(var(--brand))]" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 text-[hsl(var(--brand))]" />
+                  )}
+                </button>
+                
+                {expandedPositions[position.title] && (
+                  <div className="px-6 pb-6 pt-2">
+                    <div className="border-t border-gray-100 pt-4">
+                      <h4 className="font-semibold text-[hsl(var(--brand))] mb-3">Requirements:</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                        {position.requirements.map((req) => (
+                          <div key={req} className="flex items-start text-sm">
+                            <div className="w-2 h-2 bg-[hsl(var(--brand))] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-gray-700 leading-relaxed">{req}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <Button size="sm" asChild>
+                          <Link href="#application">Apply for this Position</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Company Culture */}
-      <section className="py-20">
+      <section className="section-spacing">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-brand mb-6">
+              <h2 className="mb-6">
                 Join Our Team of Professionals
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-[hsl(var(--muted-foreground))] mb-6">
                 At Care on Call Home Healthcare, we believe in providing exceptional 
                 care while maintaining the highest professional standards. Our team 
                 members are carefully screened and continuously supported.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <Users className="h-5 w-5 text-brand mt-0.5 mr-3 flex-shrink-0" />
+                  <Users className="h-5 w-5 text-[hsl(var(--brand))] mt-0.5 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">Comprehensive background checks and screening</span>
                 </li>
                 <li className="flex items-start">
-                  <Award className="h-5 w-5 text-brand mt-0.5 mr-3 flex-shrink-0" />
+                  <Award className="h-5 w-5 text-[hsl(var(--brand))] mt-0.5 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">Ongoing training and professional development</span>
                 </li>
                 <li className="flex items-start">
-                  <Heart className="h-5 w-5 text-brand mt-0.5 mr-3 flex-shrink-0" />
+                  <Heart className="h-5 w-5 text-[hsl(var(--brand))] mt-0.5 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">Supportive work environment focused on patient care</span>
                 </li>
               </ul>
             </div>
-            <div className="bg-brand/5 p-8 rounded-lg">
+            <div className="bg-[hsl(var(--brand))]/5 p-8 rounded-2xl border border-black/10">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[hsl(var(--brand))] rounded-full mb-6">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-brand mb-4">
+                <h3 className="text-2xl font-bold text-[hsl(var(--brand))] mb-4">
                   Ready to Apply?
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-[hsl(var(--muted-foreground))] mb-6">
                   Send your application online and become part of our dedicated 
                   healthcare team serving the Broward County community.
                 </p>

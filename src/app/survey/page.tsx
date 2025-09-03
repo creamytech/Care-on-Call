@@ -188,7 +188,7 @@ export default function SurveyPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Thank You for Your Feedback
             </h2>
-            <p className="text-lg mb-8 text-blue-100">
+            <p className="text-lg mb-8 text-white/90">
               Your input helps us continue providing exceptional home healthcare 
               services to families throughout Broward County.
             </p>

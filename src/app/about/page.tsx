@@ -198,7 +198,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Experience the Care on Call Difference
             </h2>
-            <p className="text-lg mb-8 text-blue-100">
+            <p className="text-lg mb-8 text-white/90">
               Contact us today to learn how our professional, compassionate healthcare 
               team can provide the quality care you or your loved one deserves.
             </p>

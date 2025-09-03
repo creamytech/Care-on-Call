@@ -75,16 +75,16 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-50 to-brand-100 py-20">
+      <section className="bg-gradient-to-r from-[hsl(var(--brand))]/5 to-[hsl(var(--brand))]/10 section-spacing">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-brand mb-6">
+            <h1 className="mb-6">
               Contact Us
             </h1>
             <p className="text-xl text-gray-700 mb-8">
               We're here to help with all your home healthcare needs
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-3xl mx-auto">
               Contact Care on Call Home Healthcare today to learn more about our services 
               or to discuss your specific healthcare needs. Our team is ready to provide 
               the quality care you deserve.
@@ -94,24 +94,24 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information & Form */}
-      <section className="py-20">
+      <section className="section-spacing">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1">
-              <h2 className="text-3xl font-bold text-brand mb-6">Get in Touch</h2>
+              <h2 className="mb-6">Get in Touch</h2>
               
               {/* Contact Details */}
               <div className="space-y-6">
-                <Card>
+                <Card className="border border-black/10 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <CardHeader>
                     <div className="flex items-center">
-                      <MapPin className="h-5 w-5 text-brand mr-2" />
+                      <MapPin className="h-5 w-5 text-[hsl(var(--brand))] mr-2" />
                       <CardTitle className="text-lg">Address</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <address className="not-italic text-gray-600">
+                    <address className="not-italic text-[hsl(var(--muted-foreground))]">
                       Care on Call Home Healthcare<br />
                       211 East Prospect Road, NE 44th St.<br />
                       Fort Lauderdale, FL 33334
@@ -119,51 +119,45 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="border border-black/10 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <CardHeader>
                     <div className="flex items-center">
-                      <Phone className="h-5 w-5 text-brand mr-2" />
+                      <Phone className="h-5 w-5 text-[hsl(var(--brand))] mr-2" />
                       <CardTitle className="text-lg">Phone</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-2">
                     <div>
-                      <div className="font-medium text-gray-900">Toll Free</div>
-                      <a href="tel:1-877-255-9090" className="text-brand hover:underline">
-                        1-877-255-9090
-                      </a>
-                    </div>
-                    <div>
                       <div className="font-medium text-gray-900">Local</div>
-                      <a href="tel:954-358-5001" className="text-brand hover:underline">
+                      <a href="tel:+19543585001" className="text-[hsl(var(--brand))] hover:underline transition-colors duration-200">
                         (954) 358-5001
                       </a>
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Fax</div>
-                      <span className="text-gray-600">(954) 358-5008</span>
+                      <span className="text-[hsl(var(--muted-foreground))]">(954) 358-5008</span>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="border border-black/10 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <CardHeader>
                     <div className="flex items-center">
-                      <Mail className="h-5 w-5 text-brand mr-2" />
+                      <Mail className="h-5 w-5 text-[hsl(var(--brand))] mr-2" />
                       <CardTitle className="text-lg">Email</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <a href="mailto:info@care-on-call.com" className="text-brand hover:underline">
+                    <a href="mailto:info@care-on-call.com" className="text-[hsl(var(--brand))] hover:underline transition-colors duration-200">
                       info@care-on-call.com
                     </a>
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="border border-black/10 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <CardHeader>
                     <div className="flex items-center">
-                      <Clock className="h-5 w-5 text-brand mr-2" />
+                      <Clock className="h-5 w-5 text-[hsl(var(--brand))] mr-2" />
                       <CardTitle className="text-lg">Office Hours</CardTitle>
                     </div>
                   </CardHeader>
@@ -172,29 +166,30 @@ export default function ContactPage() {
                       {officeHours.map((schedule) => (
                         <div key={schedule.day} className="flex justify-between">
                           <span className="font-medium text-gray-900">{schedule.day}</span>
-                          <span className="text-gray-600">{schedule.hours}</span>
+                          <span className="text-[hsl(var(--muted-foreground))]">{schedule.hours}</span>
                         </div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
 
-                <div className="text-sm text-gray-500 pt-4">
-                  <p>License # 299993274</p>
+                <div className="text-sm text-[hsl(var(--muted-foreground))] pt-4 bg-[hsl(var(--brand))]/5 p-4 rounded-lg border border-[hsl(var(--brand))]/20">
+                  <p className="font-medium text-[hsl(var(--brand))]">Florida License # 299993274</p>
+                  <p className="mt-1">ACHC Accredited Home Healthcare Provider</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
+              <Card className="border border-black/10 shadow-lg">
+                <CardHeader className="border-b border-black/10">
+                  <CardTitle className="text-2xl text-[hsl(var(--brand))]">Send us a Message</CardTitle>
                   <CardDescription>
                     Fill out the form below and we'll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-8">
                   {submitStatus === 'success' && (
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                       <p className="text-green-800">Thank you for your message! We'll get back to you soon.</p>
@@ -308,21 +303,74 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-spacing bg-gray-50">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-brand mb-8 text-center">Our Location</h2>
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3844755467976!2d-80.14168168449827!3d26.155781383471707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d904c2d6d8b5f1%3A0x8b8f5f3b3f3f3f3f!2s211%20E%20Prospect%20Rd%2C%20Fort%20Lauderdale%2C%20FL%2033334!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Care on Call Home Healthcare Location"
-              ></iframe>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-8 text-center">Our Location</h2>
+            
+            {/* Map Container with Placeholder */}
+            <div className="bg-white rounded-2xl border border-black/10 shadow-lg overflow-hidden">
+              <div className="relative">
+                {/* Map Placeholder */}
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-96 flex flex-col items-center justify-center text-center p-8">
+                  <div className="bg-[hsl(var(--brand))]/10 rounded-full p-6 mb-6">
+                    <MapPin className="h-12 w-12 text-[hsl(var(--brand))]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[hsl(var(--brand))] mb-2">
+                    Interactive Map Coming Soon
+                  </h3>
+                  <p className="text-[hsl(var(--muted-foreground))] mb-4 max-w-md">
+                    We're working on adding an interactive map to help you find our location easily.
+                  </p>
+                  <div className="text-sm text-gray-700 space-y-1">
+                    <p className="font-medium">Care on Call Home Healthcare</p>
+                    <p>211 East Prospect Road, NE 44th St.</p>
+                    <p>Fort Lauderdale, FL 33334</p>
+                  </div>
+                  <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                    <Button size="sm" variant="outline" asChild>
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=211+East+Prospect+Road+Fort+Lauderdale+FL+33334" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
+                        <MapPin className="h-4 w-4 mr-2" />
+                        Open in Google Maps
+                      </a>
+                    </Button>
+                    <Button size="sm" asChild>
+                      <a href="tel:+19543585001" className="inline-flex items-center">
+                        <Phone className="h-4 w-4 mr-2" />
+                        Call for Directions
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Service Area Information */}
+            <div className="mt-8 text-center">
+              <div className="bg-white rounded-2xl border border-black/10 shadow-sm p-8">
+                <h3 className="text-lg font-semibold text-[hsl(var(--brand))] mb-4">
+                  Serving Broward County & Surrounding Areas
+                </h3>
+                <p className="text-[hsl(var(--muted-foreground))] mb-6">
+                  We provide comprehensive home healthcare services throughout Broward County, 
+                  including Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, and surrounding communities.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                  <div>Fort Lauderdale</div>
+                  <div>Hollywood</div>
+                  <div>Pembroke Pines</div>
+                  <div>Coral Springs</div>
+                  <div>Davie</div>
+                  <div>Plantation</div>
+                  <div>Sunrise</div>
+                  <div>Weston</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

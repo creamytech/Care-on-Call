@@ -1,4 +1,7 @@
+'use client'
+
 import type { Metadata } from 'next'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Stethoscope, Activity, Users, Heart, Clock, Shield } from 'lucide-react'
@@ -117,22 +120,65 @@ const careOptions = [
 ]
 
 export default function ServicesPage() {
+  const [activeService, setActiveService] = useState<string>('nursing')
+
+  const scrollToService = (serviceId: string) => {
+    setActiveService(serviceId)
+    const element = document.getElementById(serviceId)
+    if (element) {
+      const offset = 120
+      const bodyRect = document.body.getBoundingClientRect().top
+      const elementRect = element.getBoundingClientRect().top
+      const elementPosition = elementRect - bodyRect
+      const offsetPosition = elementPosition - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-50 to-brand-100 py-20">
+      <section className="bg-gradient-to-r from-[hsl(var(--brand))]/5 to-[hsl(var(--brand))]/10 section-spacing">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-brand mb-6">
+            <h1 className="mb-6">
               Our Healthcare Services
             </h1>
             <p className="text-xl text-gray-700 mb-8">
               Comprehensive in-home care services in Broward County, Florida
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-3xl mx-auto">
               From skilled nursing to personal care assistance, we provide professional 
               healthcare services in the comfort and privacy of your own home.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Navigation */}
+      <section className="sticky top-20 z-40 bg-white/95 backdrop-blur border-b border-black/10 py-4">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+            {serviceCategories.map((category, index) => {
+              const serviceId = category.title.toLowerCase().replace(/\s+/g, '-').replace('/', '-')
+              return (
+                <button
+                  key={category.title}
+                  onClick={() => scrollToService(serviceId)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    activeService === serviceId
+                      ? 'bg-[hsl(var(--brand))] text-white shadow-md'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category.title.replace(' Services', '')}
+                </button>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -161,42 +207,49 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Categories */}
-      <section className="py-20 bg-gray-50">
+      <section className="section-spacing bg-gray-50">
         <div className="container">
           <div className="space-y-16">
-            {serviceCategories.map((category, index) => (
-              <div key={category.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-brand rounded-lg flex items-center justify-center mr-4">
-                      <category.icon className="h-6 w-6 text-white" />
+            {serviceCategories.map((category, index) => {
+              const serviceId = category.title.toLowerCase().replace(/\s+/g, '-').replace('/', '-')
+              return (
+                <div 
+                  key={category.title} 
+                  id={serviceId}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                >
+                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-[hsl(var(--brand))] rounded-lg flex items-center justify-center mr-4">
+                        <category.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h2>
+                          {category.title}
+                        </h2>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-brand">
-                        {category.title}
-                      </h2>
+                    <p className="text-lg text-[hsl(var(--muted-foreground))] mb-6">
+                      {category.description}
+                    </p>
+                    <Button asChild>
+                      <Link href="/contact">Learn More</Link>
+                    </Button>
+                  </div>
+                  <div className={`bg-white rounded-2xl border border-black/10 shadow-sm p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                    <h3 className="text-lg font-semibold text-[hsl(var(--brand))] mb-4">Services Include:</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
+                      {category.services.map((service) => (
+                        <div key={service} className="flex items-start">
+                          <div className="w-2 h-2 bg-[hsl(var(--brand))] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm leading-relaxed">{service}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    {category.description}
-                  </p>
-                  <Button asChild>
-                    <Link href="/contact">Learn More</Link>
-                  </Button>
                 </div>
-                <div className={`bg-white rounded-lg shadow-sm p-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <h3 className="text-lg font-semibold text-brand mb-4">Services Include:</h3>
-                  <ul className="space-y-2">
-                    {category.services.map((service) => (
-                      <li key={service} className="flex items-start">
-                        <div className="w-2 h-2 bg-brand rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm">{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -241,21 +294,31 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand text-white">
+      <section className="section-spacing bg-[hsl(var(--brand))] text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2>
               Ready to Get Started?
             </h2>
-            <p className="text-lg mb-8 text-blue-100">
+            <p className="text-lg mb-8 text-white/90">
               Contact us today to discuss your healthcare needs and learn how 
               we can provide the quality care you deserve.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="tel:877-255-9090">Call Toll Free 1-877-255-9090</a>
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                asChild 
+                className="bg-white text-[hsl(var(--brand))] hover:bg-white/90"
+              >
+                <a href="tel:+19543585001">Call (954) 358-5001</a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-brand" asChild>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent border-white text-white hover:bg-white hover:text-[hsl(var(--brand))] transition-colors duration-200" 
+                asChild
+              >
                 <Link href="/contact">Request Information</Link>
               </Button>
             </div>
