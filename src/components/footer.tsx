@@ -222,6 +222,16 @@ export function Footer() {
             
             <div className="mt-3 md:mt-0 text-center md:text-right">
               <p>Locally owned and operated • Serving Broward County, Florida</p>
+              <p className="text-xs text-gray-400 mt-2">
+                <a 
+                  href="https://www.pixelboba.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Crafted by Pixel Boba
+                </a>
+              </p>
             </div>
           </div>
         </div>
