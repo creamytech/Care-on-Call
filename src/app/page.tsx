@@ -78,14 +78,14 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
               Care on Call Home Healthcare
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in [animation-delay:200ms]">
+            <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in">
               Home Care That Exceeds Expectations
             </p>
-            <p className="text-lg mb-12 text-gray-100 animate-fade-in [animation-delay:400ms]">
+            <p className="text-lg mb-12 text-gray-100 animate-fade-in">
               Providing quality in-home care services in Broward County, Florida. 
               Licensed, trusted, and locally owned and operated.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:600ms] px-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in px-4">
               <a 
                 href="tel:+19543585001" 
                 className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
@@ -122,7 +122,7 @@ export default function Home() {
           
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <article key={service.title} className={`group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'}`}>
+              <article key={service.title} className="group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md animate-fade-in">
                 <div className="mb-4">
                   {/* Service image - will show when you add service icons */}
                   <Image
@@ -174,7 +174,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.name} className={`hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in ${index === 0 ? '[animation-delay:200ms]' : index === 1 ? '[animation-delay:400ms]' : '[animation-delay:600ms]'}`}>
+              <Card key={testimonial.name} className="hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in">
                 <CardHeader>
                   <div className="flex items-center space-x-1 mb-4">
                     {[...Array(5)].map((_, i) => (
