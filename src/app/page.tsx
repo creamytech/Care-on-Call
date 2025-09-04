@@ -78,7 +78,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fade-in text-white">
               Care on Call Home Healthcare
             </h1>
-            <p className="text-2xl md:text-4xl text-center text-white animate-fade-in mb-8 font-[var(--font-dancing-script)]">
+            <p className="text-2xl md:text-4xl text-center text-white animate-fade-in mb-8" style={{ fontFamily: 'Dancing Script, cursive' }}>
               Our family helping your family!
             </p>
             <p className="text-lg mb-12 text-gray-100 animate-fade-in">

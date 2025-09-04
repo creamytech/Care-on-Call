@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Dancing_Script } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { BackToTop } from '@/components/back-to-top'
@@ -9,10 +9,6 @@ import { Toaster } from 'react-hot-toast'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const dancingScript = Dancing_Script({ 
-  subsets: ['latin'],
-  variable: '--font-dancing-script',
-})
 
 export const metadata: Metadata = {
   title: 'Care on Call Home Healthcare - Fort Lauderdale, FL',
@@ -112,12 +108,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={`${inter.className} ${dancingScript.variable}`}>
+      <body className={inter.className}>
         {/* Skip Links for Accessibility */}
         <a
           href="#main-content"
