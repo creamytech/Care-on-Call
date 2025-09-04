@@ -75,14 +75,11 @@ export default function Home() {
         <div className="relative z-10">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fade-in text-white">
               Care on Call Home Healthcare
             </h1>
-            <p className="mt-2 text-center italic text-lg sm:text-xl text-white animate-fade-in font-serif">
-              our family helping your family!
-            </p>
-            <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in">
-              Home Care That Exceeds Expectations
+            <p className="text-2xl md:text-4xl text-center text-white animate-fade-in mb-8 font-[var(--font-dancing-script)]">
+              Our family helping your family!
             </p>
             <p className="text-lg mb-12 text-gray-100 animate-fade-in">
               Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
