@@ -87,7 +87,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in px-4">
               <a 
                 href="tel:+19543585001" 
-                className="h-12 px-8 py-3 rounded-lg bg-white text-gray-700 font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 <span className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
@@ -111,10 +111,10 @@ export default function Home() {
       <section className="section-spacing bg-[hsl(var(--muted))]">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Healthcare Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[hsl(var(--brand))] max-w-2xl mx-auto">
               We provide comprehensive in-home healthcare services ranging from a few hours to 24/7 assistance.
             </p>
           </div>
@@ -139,12 +139,12 @@ export default function Home() {
                   />
                   {/* Fallback icon */}
                   <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hidden group-hover:bg-gray-200 transition-colors duration-300">
-                    <service.icon className="h-6 w-6 text-gray-700 group-hover:text-gray-800 transition-colors duration-300" />
+                    <service.icon className="h-6 w-6 text-[hsl(var(--brand))] group-hover:text-[hsl(var(--brand-dark))] transition-colors duration-300" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">{service.description}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-gray-700 font-medium">
+                <span className="mt-4 inline-flex items-center gap-1 text-[hsl(var(--brand))] font-medium">
                   Learn more <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </span>
               </article>
@@ -163,10 +163,10 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               What Our Families Say
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[hsl(var(--brand))] max-w-2xl mx-auto">
               Hear from the families we've had the privilege to serve throughout Broward County
             </p>
           </div>
@@ -186,8 +186,8 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-sm">
-                    <p className="font-semibold text-gray-700">{testimonial.name}</p>
-                    <p className="text-gray-500">{testimonial.location}</p>
+                    <p className="font-semibold text-[hsl(var(--brand))]">{testimonial.name}</p>
+                    <p className="text-[hsl(var(--brand))]">{testimonial.location}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -201,10 +201,10 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Care You Can Trust
               </h2>
-              <p className="text-lg text-gray-700 mb-8">
+              <p className="text-lg text-[hsl(var(--brand))] mb-8">
                 Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -213,7 +213,7 @@ export default function Home() {
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 mt-0.5">
                       <Check className="h-3 w-3 text-green-600" />
                     </div>
-                    <span className="text-gray-800 text-sm">{feature}</span>
+                    <span className="text-[hsl(var(--brand))] text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -223,14 +223,14 @@ export default function Home() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-700 rounded-full mb-6">
                   <MapPin className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-4">
                   Serving Broward County
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-[hsl(var(--brand))] mb-6">
                   Located in Fort Lauderdale, we provide live-in assistance 
                   and credentialed aides for full-time, ongoing care at reduced daily rates.
                 </p>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-[hsl(var(--brand))]">
                   <p>211 E Prospect Rd. (NE 44th St.)</p>
                   <p>Fort Lauderdale, FL 33334</p>
                   <p className="mt-2">License # 299993274</p>
@@ -245,10 +245,10 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-700 mb-4">
+            <h2 className="text-2xl font-bold mb-4">
               Trusted & Accredited
             </h2>
-            <p className="text-gray-700">
+            <p className="text-[hsl(var(--brand))]">
               Licensed by the State of Florida and accredited by leading healthcare organizations
             </p>
           </div>
@@ -270,9 +270,9 @@ export default function Home() {
               />
               {/* Fallback badge */}
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
-                <Award className="h-10 w-10 text-gray-700" />
+                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
               </div>
-              <span className="text-sm text-gray-600 text-center font-medium">ACHC<br/>Accredited</span>
+              <span className="text-sm text-[hsl(var(--brand))] text-center font-medium">ACHC<br/>Accredited</span>
             </div>
             
             {/* Medicare Certified */}
@@ -291,9 +291,9 @@ export default function Home() {
               />
               {/* Fallback badge */}
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
-                <Shield className="h-10 w-10 text-gray-700" />
+                <Shield className="h-10 w-10 text-[hsl(var(--brand))]" />
               </div>
-              <span className="text-sm text-gray-600 text-center font-medium">Medicare<br/>Certified</span>
+              <span className="text-sm text-[hsl(var(--brand))] text-center font-medium">Medicare<br/>Certified</span>
             </div>
             
             {/* Florida Licensed */}
@@ -312,9 +312,9 @@ export default function Home() {
               />
               {/* Fallback badge */}
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
-                <Award className="h-10 w-10 text-gray-700" />
+                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
               </div>
-              <span className="text-sm text-gray-600 text-center font-medium">FL Licensed<br/>#299993274</span>
+              <span className="text-sm text-[hsl(var(--brand))] text-center font-medium">FL Licensed<br/>#299993274</span>
             </div>
           </div>
         </div>
