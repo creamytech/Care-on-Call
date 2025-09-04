@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Care on Call Home Healthcare - Fort Lauderdale, FL',
-  description: 'Care on Call Home Healthcare is a provider of quality in-home care services in Broward County, Florida. Locally owned and operated with Medicare, private, and custodial care.',
+  description: 'Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.',
   keywords: 'home healthcare, Fort Lauderdale, nursing, therapy, home care, Florida',
   authors: [{ name: 'Care on Call Home Healthcare' }],
   icons: {
@@ -38,7 +38,7 @@ export default function RootLayout({
     "@type": "HealthcareOrganization",
     "name": "Care on Call Home Healthcare",
     "alternateName": "Care on Call",
-    "description": "Quality in-home care services in Broward County, Florida. Licensed, trusted, and locally owned and operated healthcare provider.",
+    "description": "Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.",
     "url": "https://www.care-on-call.com",
     "logo": "https://www.care-on-call.com/images/logos/care-on-call-logo.png",
     "image": "https://www.care-on-call.com/images/logos/care-on-call-logo.png",
@@ -46,7 +46,7 @@ export default function RootLayout({
     "email": "info@care-on-call.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "211 East Prospect Road, NE 44th St.",
+      "streetAddress": "211 E Prospect Rd. (NE 44th St.)",
       "addressLocality": "Fort Lauderdale",
       "addressRegion": "FL",
       "postalCode": "33334",
@@ -57,14 +57,22 @@ export default function RootLayout({
       "latitude": "26.1224",
       "longitude": "-80.1373"
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "00:00"
+      }
+    ],
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {

@@ -56,9 +56,7 @@ export default function AboutPage() {
               Care You Can Trust
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Care on Call Home Healthcare is a provider of quality in-home care services 
-              in Broward County, Florida. We offer care ranging from a few hours to 24/7 assistance, 
-              with credentialed healthcare professionals who are committed to excellence.
+              Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
             </p>
           </div>
         </div>

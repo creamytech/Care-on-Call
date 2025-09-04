@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChevronDown, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions - Care on Call Home Healthcare',
@@ -10,14 +11,21 @@ export const metadata: Metadata = {
   keywords: 'home healthcare FAQ, Medicare coverage, nursing services questions, Fort Lauderdale healthcare',
 }
 
+const INSURANCE_BRANDS = [
+  { name: "Medicare", src: "/logos/medicare.svg", alt: "Medicare" },
+  { name: "Aetna", src: "/logos/aetna.svg", alt: "Aetna" },
+  { name: "Cigna", src: "/logos/cigna.svg", alt: "Cigna" },
+  { name: "Oscar", src: "/logos/oscar.svg", alt: "Oscar" },
+]
+
 const faqs = [
   {
     question: 'What services does Care on Call Home Healthcare provide?',
     answer: 'We provide comprehensive home healthcare services including skilled nursing, physical therapy, occupational therapy, speech therapy, and custodial care. Our services range from a few hours to 24/7 assistance depending on your needs.'
   },
   {
-    question: 'Do you accept Medicare and insurance?',
-    answer: 'Yes, we accept Medicare, private insurance, and private pay. We work with most major insurance providers and can help you understand your coverage options.'
+    question: 'What insurances do you accept?',
+    answer: 'We accept: Medicare, Aetna (Commercial and Medicare Advantage), Cigna (Commercial plans only), Oscar (Commercial plans only), Private Duty (minimum 4 hours; special live-in rates - ask about requirements), Most Long Term Insurances, Humana (LTC Medicaid), and One Call (Workman\'s Comp). Not sure about your coverage? Call (954) 358-5001 and we\'ll verify for you. Fax: (954) 358-5008.'
   },
   {
     question: 'What areas do you serve?',
@@ -86,6 +94,33 @@ export default function FAQPage() {
                     <CardDescription className="text-base text-gray-700 leading-relaxed">
                       {faq.answer}
                     </CardDescription>
+                    {faq.question === 'What insurances do you accept?' && (
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                          {INSURANCE_BRANDS.map((brand) => (
+                            <div key={brand.name} className="flex flex-col items-center min-w-[44px]">
+                              <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-lg flex items-center justify-center p-2 hover:bg-gray-100 transition-colors duration-200">
+                                <Image
+                                  src={brand.src}
+                                  alt={brand.alt}
+                                  width={64}
+                                  height={64}
+                                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                                  onError={(e) => {
+                                    // Hide image and show fallback text
+                                    e.currentTarget.style.display = 'none';
+                                    const parent = e.currentTarget.closest('.w-16, .w-20') as HTMLElement;
+                                    if (parent) {
+                                      parent.innerHTML = `<span class="text-xs font-medium text-gray-700 text-center px-2 py-1 bg-gray-200 rounded-full">${brand.name}</span>`;
+                                    }
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}

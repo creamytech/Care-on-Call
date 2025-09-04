@@ -23,9 +23,9 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>
 
 const officeHours = [
-  { day: 'Monday - Friday', hours: '8:00 AM - 6:00 PM' },
-  { day: 'Saturday', hours: '9:00 AM - 3:00 PM' },
-  { day: 'Sunday', hours: 'On-call for emergencies' },
+  { day: 'Monday - Friday', hours: '8:30 AM - 5:00 PM' },
+  { day: 'Saturday & Sunday', hours: 'Closed' },
+  { day: 'On-call', hours: '24/7 for patients' },
 ]
 
 export default function ContactPage() {
@@ -113,7 +113,7 @@ export default function ContactPage() {
                   <CardContent>
                     <address className="not-italic text-[hsl(var(--muted-foreground))]">
                       Care on Call Home Healthcare<br />
-                      211 East Prospect Road, NE 44th St.<br />
+                      211 E Prospect Rd. (NE 44th St.)<br />
                       Fort Lauderdale, FL 33334
                     </address>
                   </CardContent>
@@ -324,13 +324,13 @@ export default function ContactPage() {
                   </p>
                   <div className="text-sm text-gray-700 space-y-1">
                     <p className="font-medium">Care on Call Home Healthcare</p>
-                    <p>211 East Prospect Road, NE 44th St.</p>
+                    <p>211 E Prospect Rd. (NE 44th St.)</p>
                     <p>Fort Lauderdale, FL 33334</p>
                   </div>
                   <div className="mt-6 flex flex-col sm:flex-row gap-3">
                     <Button size="sm" variant="outline" asChild>
                       <a 
-                        href="https://www.google.com/maps/search/?api=1&query=211+East+Prospect+Road+Fort+Lauderdale+FL+33334" 
+                        href="https://www.google.com/maps/search/?api=1&query=211+E+Prospect+Rd+Fort+Lauderdale+FL+33334" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center"

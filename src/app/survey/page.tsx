@@ -171,8 +171,7 @@ export default function SurveyPage() {
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">In Person</h3>
                 <p className="text-gray-600 text-sm mb-3">Visit our office location</p>
                 <div className="text-sm text-gray-600">
-                  <p>211 East Prospect Road</p>
-                  <p>NE 44th St.</p>
+                  <p>211 E Prospect Rd. (NE 44th St.)</p>
                   <p>Fort Lauderdale, FL 33334</p>
                 </div>
               </div>

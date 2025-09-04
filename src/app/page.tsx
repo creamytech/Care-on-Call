@@ -78,12 +78,14 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
               Care on Call Home Healthcare
             </h1>
+            <p className="mt-2 text-center italic text-lg sm:text-xl text-white animate-fade-in font-serif">
+              our family helping your family!
+            </p>
             <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in">
               Home Care That Exceeds Expectations
             </p>
             <p className="text-lg mb-12 text-gray-100 animate-fade-in">
-              Providing quality in-home care services in Broward County, Florida. 
-              Licensed, trusted, and locally owned and operated.
+              Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in px-4">
               <a 
@@ -206,10 +208,7 @@ export default function Home() {
                 Care You Can Trust
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                Care on Call Home Healthcare is a provider of quality in-home care services 
-                in Broward County, Florida. We offer credentialed healthcare professionals 
-                with extensive screening including licensure verification, criminal background 
-                checks, and competency testing.
+                Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {trustFeatures.map((feature) => (
@@ -235,7 +234,7 @@ export default function Home() {
                   and credentialed aides for full-time, ongoing care at reduced daily rates.
                 </p>
                 <div className="text-sm text-gray-600">
-                  <p>211 East Prospect Road, NE 44th St.</p>
+                  <p>211 E Prospect Rd. (NE 44th St.)</p>
                   <p>Fort Lauderdale, FL 33334</p>
                   <p className="mt-2">License # 299993274</p>
                 </div>

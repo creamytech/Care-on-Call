@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="font-semibold text-gray-700 mb-2">Care on Call Home Healthcare</p>
-              <p className="text-gray-700">211 East Prospect Road, NE 44th St.</p>
+              <p className="text-gray-700">211 E Prospect Rd. (NE 44th St.)</p>
               <p className="text-gray-700">Fort Lauderdale, FL 33334</p>
               <p className="text-gray-700">Phone: (954) 358-5001</p>
               <p className="text-gray-700">Email: info@care-on-call.com</p>

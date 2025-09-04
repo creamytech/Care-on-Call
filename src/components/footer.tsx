@@ -75,9 +75,7 @@ export function Footer() {
             <div className="mb-6">
               <h3 className="text-xl font-bold text-white mb-2">Care on Call</h3>
               <p className="text-gray-100 text-sm leading-relaxed">
-                Providing compassionate, professional home healthcare services 
-                throughout Broward County since our founding. Your trusted partner 
-                in quality home care.
+                Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
               </p>
             </div>
             
@@ -85,7 +83,7 @@ export function Footer() {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 text-gray-400 mt-1 mr-3 flex-shrink-0" />
                 <div className="text-sm text-gray-100">
-                  <p>211 East Prospect Road, NE 44th St.</p>
+                  <p>211 E Prospect Rd. (NE 44th St.)</p>
                   <p>Fort Lauderdale, FL 33334</p>
                 </div>
               </div>
