@@ -137,7 +137,7 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[hsl(var(--brand))]/5 to-[hsl(var(--brand))]/10 section-spacing">
+      <section className="bg-gradient-to-r from-gray-50 to-gray-100 section-spacing">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-6">

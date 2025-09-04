@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[hsl(var(--brand))] to-[hsl(var(--brand-700))] text-white section-spacing overflow-hidden">
+      <section className="relative bg-gradient-to-r from-gray-600 to-gray-700 text-white section-spacing overflow-hidden">
         {/* Background image - will show when you add homepage-hero.jpg */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -324,39 +324,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-spacing bg-gradient-to-r from-[hsl(var(--brand))] to-[hsl(var(--brand-700))] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg mb-8 text-gray-100 animate-fade-in [animation-delay:200ms]">
-              Contact us today to learn more about our quality in-home healthcare services 
-              or to refer a client to our care.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms] px-4">
-              <a 
-                href="tel:+18772559090" 
-                className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-              >
-                <span className="flex items-center">
-                  <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
-                  <span className="hidden sm:inline">Call Toll Free 1-877-255-9090</span>
-                  <span className="sm:hidden">Call Toll Free</span>
-                </span>
-              </a>
-              <Link 
-                href="/contact" 
-                className="h-12 px-8 py-3 rounded-lg border-2 border-white text-white font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

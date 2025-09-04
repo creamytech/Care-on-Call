@@ -7,7 +7,7 @@ export default function SurveyPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-50 to-brand-100 py-20">
+      <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
