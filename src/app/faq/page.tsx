@@ -100,21 +100,9 @@ export default function FAQPage() {
                           {INSURANCE_BRANDS.map((brand) => (
                             <div key={brand.name} className="flex flex-col items-center min-w-[44px]">
                               <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-lg flex items-center justify-center p-2 hover:bg-gray-100 transition-colors duration-200">
-                                <Image
-                                  src={brand.src}
-                                  alt={brand.alt}
-                                  width={64}
-                                  height={64}
-                                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                                  onError={(e) => {
-                                    // Hide image and show fallback text
-                                    e.currentTarget.style.display = 'none';
-                                    const parent = e.currentTarget.closest('.w-16, .w-20') as HTMLElement;
-                                    if (parent) {
-                                      parent.innerHTML = `<span class="text-xs font-medium text-gray-700 text-center px-2 py-1 bg-gray-200 rounded-full">${brand.name}</span>`;
-                                    }
-                                  }}
-                                />
+                                <span className="text-xs font-medium text-gray-700 text-center px-2 py-1 bg-gray-200 rounded-full">
+                                  {brand.name}
+                                </span>
                               </div>
                             </div>
                           ))}
