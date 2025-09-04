@@ -49,10 +49,10 @@ export default function AboutPage() {
       <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               About Care on Call Home Healthcare
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-[hsl(var(--brand))] mb-8">
               Care You Can Trust
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -67,7 +67,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Serving Broward County with Excellence
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-6">
                   <Heart className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-4">
                   Our Mission
                 </h3>
                 <p className="text-gray-600">
@@ -107,7 +107,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Why Choose Care on Call?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -121,7 +121,7 @@ export default function AboutPage() {
               <Card key={feature.title} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="mx-auto w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-                    <feature.icon className="h-6 w-6 text-gray-700" />
+                    <feature.icon className="h-6 w-6 text-[hsl(var(--brand))]" />
                   </div>
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </CardHeader>
@@ -141,35 +141,35 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-gray-700 mb-6">
+              <h3 className="text-2xl font-bold mb-6">
                 License & Accreditation
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center p-4 bg-white rounded-lg">
-                  <Award className="h-8 w-8 text-gray-700 mr-4" />
+                  <Award className="h-8 w-8 text-[hsl(var(--brand))] mr-4" />
                   <div>
-                    <div className="font-semibold text-gray-700">State of Florida Licensed</div>
+                    <div className="font-semibold text-[hsl(var(--brand))]">State of Florida Licensed</div>
                     <div className="text-sm text-gray-600">License # 299993274</div>
                   </div>
                 </div>
                 <div className="flex items-center p-4 bg-white rounded-lg">
-                  <Users className="h-8 w-8 text-gray-700 mr-4" />
+                  <Users className="h-8 w-8 text-[hsl(var(--brand))] mr-4" />
                   <div>
-                    <div className="font-semibold text-gray-700">Locally Owned & Operated</div>
+                    <div className="font-semibold text-[hsl(var(--brand))]">Locally Owned & Operated</div>
                     <div className="text-sm text-gray-600">Fort Lauderdale, Florida</div>
                   </div>
                 </div>
                 <div className="flex items-center p-4 bg-white rounded-lg">
-                  <Heart className="h-8 w-8 text-gray-700 mr-4" />
+                  <Heart className="h-8 w-8 text-[hsl(var(--brand))] mr-4" />
                   <div>
-                    <div className="font-semibold text-gray-700">Medicare Certified</div>
+                    <div className="font-semibold text-[hsl(var(--brand))]">Medicare Certified</div>
                     <div className="text-sm text-gray-600">Accepting Medicare & Private Pay</div>
                   </div>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-gray-700 mb-6">
+              <h3 className="text-2xl font-bold mb-6">
                 Extensive Staff Screening
               </h3>
               <p className="text-lg text-gray-600 mb-6">
@@ -179,8 +179,8 @@ export default function AboutPage() {
               <ul className="space-y-3">
                 {screeningProcess.map((item) => (
                   <li key={item} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-gray-700 mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--brand))] mt-0.5 mr-3 flex-shrink-0" />
+                    <span className="text-[hsl(var(--brand))]">{item}</span>
                   </li>
                 ))}
               </ul>

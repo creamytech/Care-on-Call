@@ -101,10 +101,10 @@ export default function FAQPage() {
       <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-[hsl(var(--brand))] mb-8">
               Find answers to common questions about our home healthcare services
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function FAQPage() {
               {faqs.map((faq, index) => (
                 <Card key={index} className="border-l-4 border-l-brand hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
-                    <CardTitle className="text-lg text-gray-700 flex items-center">
+                    <CardTitle className="text-lg text-[hsl(var(--brand))] flex items-center">
                       {faq.question}
                     </CardTitle>
                   </CardHeader>
@@ -128,7 +128,7 @@ export default function FAQPage() {
                       <div className="space-y-6">
                         {/* Major Insurance Providers */}
                         <div>
-                          <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Major Insurance Providers</h4>
+                          <h4 className="text-sm font-semibold text-[hsl(var(--brand))] mb-4 uppercase tracking-wide">Major Insurance Providers</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {INSURANCE_PROVIDERS.map((provider) => (
                               <div key={provider.name} className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
@@ -147,12 +147,12 @@ export default function FAQPage() {
 
                         {/* Other Coverage Options */}
                         <div>
-                          <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Other Coverage Options</h4>
+                          <h4 className="text-sm font-semibold text-[hsl(var(--brand))] mb-4 uppercase tracking-wide">Other Coverage Options</h4>
                           <div className="space-y-2">
                             {OTHER_COVERAGE.map((coverage, index) => (
                               <div key={index} className="flex items-start">
                                 <Check className="h-4 w-4 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                                <span className="text-sm text-gray-700">{coverage}</span>
+                                <span className="text-sm text-[hsl(var(--brand))]">{coverage}</span>
                               </div>
                             ))}
                           </div>
@@ -168,7 +168,7 @@ export default function FAQPage() {
                         </div>
                       </div>
                     ) : (
-                      <CardDescription className="text-base text-gray-700 leading-relaxed">
+                      <CardDescription className="text-base text-[hsl(var(--brand))] leading-relaxed">
                         {faq.answer}
                       </CardDescription>
                     )}
