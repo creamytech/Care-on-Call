@@ -52,7 +52,7 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               About Care on Call Home Healthcare
             </h1>
-            <p className="text-xl text-[hsl(var(--brand))] mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Care You Can Trust
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

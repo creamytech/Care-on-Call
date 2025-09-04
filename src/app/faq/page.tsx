@@ -104,7 +104,7 @@ export default function FAQPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-[hsl(var(--brand))] mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Find answers to common questions about our home healthcare services
             </p>
           </div>
