@@ -92,7 +92,8 @@ export default function RootLayout({
     ],
     "priceRange": "$$",
     "sameAs": [
-      "https://www.facebook.com/CareOnCallHomeHealthcare"
+      "https://www.facebook.com/CareOnCallHomeHealthcare",
+      "https://www.instagram.com/careoncallhomehealthcare"
     ]
   }
 

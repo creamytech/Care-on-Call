@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Phone, Mail, MapPin, Facebook, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, ArrowRight } from 'lucide-react'
 
 const quickLinks = [
   { name: 'About Us', href: '/about' },
@@ -183,8 +183,8 @@ export function Footer() {
             </div>
 
             <div className="mt-6">
-              <p className="text-sm font-medium text-white mb-4">Follow Us on Facebook</p>
-              <div className="flex justify-center">
+              <p className="text-sm font-medium text-white mb-4">Follow Us</p>
+              <div className="flex justify-center gap-3">
                 <a
                   href="https://www.facebook.com/CareOnCallHomeHealthcare"
                   target="_blank"
@@ -194,6 +194,16 @@ export function Footer() {
                 >
                   <Facebook className="h-7 w-7" />
                   <span className="sr-only">Follow Care on Call on Facebook</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/careoncallhomehealthcare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-br from-[#405DE6] via-[#5851DB] via-[#833AB4] via-[#C13584] via-[#E1306C] to-[#FD1D1D] hover:opacity-90 p-4 rounded-xl text-white transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl group"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="h-7 w-7" />
+                  <span className="sr-only">Follow Care on Call on Instagram</span>
                 </a>
               </div>
               <p className="text-xs text-gray-300 mt-3 text-center">Stay connected for health tips & updates</p>
