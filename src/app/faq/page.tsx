@@ -117,33 +117,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-700 mb-6">
-              Still Have Questions?
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Our team is here to help. Contact us for personalized answers to your specific healthcare needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
-                <a href="tel:954-358-5001" className="flex items-center">
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call (954) 358-5001
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
-                <Link href="/contact" className="flex items-center">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Contact Us
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

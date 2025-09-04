@@ -538,44 +538,6 @@ export default function ReferralPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="section-spacing bg-[hsl(var(--brand))] text-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="mb-6">
-              Questions About Referrals?
-            </h2>
-            <p className="text-lg mb-8 text-white/90">
-              Our team is here to help you understand our services and answer any questions 
-              about the referral process.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                asChild
-                className="bg-white text-[hsl(var(--brand))] hover:bg-white/90"
-              >
-                <a href="tel:+19543585001">
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call (954) 358-5001
-                </a>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[hsl(var(--brand))] transition-colors duration-200" 
-                asChild
-              >
-                <a href="mailto:info@care-on-call.com">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Email Us
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

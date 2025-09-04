@@ -311,24 +311,21 @@ export default function ContactPage() {
             {/* Map Container with Placeholder */}
             <div className="bg-white rounded-2xl border border-black/10 shadow-lg overflow-hidden">
               <div className="relative">
-                {/* Map Placeholder */}
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-96 flex flex-col items-center justify-center text-center p-8">
-                  <div className="bg-[hsl(var(--brand))]/10 rounded-full p-6 mb-6">
-                    <MapPin className="h-12 w-12 text-[hsl(var(--brand))]" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[hsl(var(--brand))] mb-2">
-                    Interactive Map Coming Soon
-                  </h3>
-                  <p className="text-[hsl(var(--muted-foreground))] mb-4 max-w-md">
-                    We're working on adding an interactive map to help you find our location easily.
-                  </p>
-                  <div className="text-sm text-gray-700 space-y-1">
-                    <p className="font-medium">Care on Call Home Healthcare</p>
-                    <p>211 E Prospect Rd. (NE 44th St.)</p>
-                    <p>Fort Lauderdale, FL 33334</p>
-                  </div>
-                  <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                    <Button size="sm" variant="outline" asChild>
+                {/* Interactive Google Map */}
+                <div className="relative h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.5!2d-80.1373!3d26.1224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d901f9b99999a1%3A0x12345!2s211%20E%20Prospect%20Rd%2C%20Fort%20Lauderdale%2C%20FL%2033334!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Care on Call Home Healthcare Location"
+                    className="rounded-t-2xl"
+                  ></iframe>
+                  <div className="absolute bottom-4 right-4 z-10">
+                    <Button size="sm" variant="secondary" asChild className="shadow-lg">
                       <a 
                         href="https://www.google.com/maps/search/?api=1&query=211+E+Prospect+Rd+Fort+Lauderdale+FL+33334" 
                         target="_blank" 
@@ -339,12 +336,24 @@ export default function ContactPage() {
                         Open in Google Maps
                       </a>
                     </Button>
-                    <Button size="sm" asChild>
-                      <a href="tel:+19543585001" className="inline-flex items-center">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Call for Directions
-                      </a>
-                    </Button>
+                  </div>
+                </div>
+                <div className="p-6 bg-white">
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-2">Our Location</h3>
+                    <div className="text-sm text-gray-700 space-y-1">
+                      <p className="font-medium">Care on Call Home Healthcare</p>
+                      <p>211 E Prospect Rd. (NE 44th St.)</p>
+                      <p>Fort Lauderdale, FL 33334</p>
+                    </div>
+                    <div className="mt-4">
+                      <Button size="sm" asChild>
+                        <a href="tel:+19543585001" className="inline-flex items-center">
+                          <Phone className="h-4 w-4 mr-2" />
+                          Call for Directions
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
