@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ChevronDown, Phone, Mail } from 'lucide-react'
+import { ChevronDown, Phone, Mail, Check } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -11,11 +11,43 @@ export const metadata: Metadata = {
   keywords: 'home healthcare FAQ, Medicare coverage, nursing services questions, Fort Lauderdale healthcare',
 }
 
-const INSURANCE_BRANDS = [
-  { name: "Medicare", src: "/logos/medicare.svg", alt: "Medicare" },
-  { name: "Aetna", src: "/logos/aetna.svg", alt: "Aetna" },
-  { name: "Cigna", src: "/logos/cigna.svg", alt: "Cigna" },
-  { name: "Oscar", src: "/logos/oscar.svg", alt: "Oscar" },
+const INSURANCE_PROVIDERS = [
+  { 
+    name: "Medicare", 
+    details: "All plans accepted",
+    logo: "https://logos-world.net/wp-content/uploads/2023/01/Medicare-Logo.png",
+    fallbackColor: "bg-blue-50 text-blue-700"
+  },
+  { 
+    name: "Aetna", 
+    details: "Commercial and Medicare Advantage",
+    logo: "https://logos-world.net/wp-content/uploads/2020/12/Aetna-Logo.png",
+    fallbackColor: "bg-purple-50 text-purple-700"
+  },
+  { 
+    name: "Cigna", 
+    details: "Commercial plans only",
+    logo: "https://logos-world.net/wp-content/uploads/2020/12/Cigna-Logo.png",
+    fallbackColor: "bg-orange-50 text-orange-700"
+  },
+  { 
+    name: "Oscar", 
+    details: "Commercial plans only",
+    logo: "https://logos-world.net/wp-content/uploads/2021/02/Oscar-Health-Logo.png",
+    fallbackColor: "bg-green-50 text-green-700"
+  },
+  { 
+    name: "Humana", 
+    details: "LTC Medicaid",
+    logo: "https://logos-world.net/wp-content/uploads/2020/12/Humana-Logo.png",
+    fallbackColor: "bg-green-50 text-green-700"
+  }
+]
+
+const OTHER_COVERAGE = [
+  "Private Duty (minimum 4 hours; special live-in rates available)",
+  "Most Long Term Insurances", 
+  "One Call (Workman's Compensation)"
 ]
 
 const faqs = [
@@ -25,7 +57,8 @@ const faqs = [
   },
   {
     question: 'What insurances do you accept?',
-    answer: 'We accept: Medicare, Aetna (Commercial and Medicare Advantage), Cigna (Commercial plans only), Oscar (Commercial plans only), Private Duty (minimum 4 hours; special live-in rates - ask about requirements), Most Long Term Insurances, Humana (LTC Medicaid), and One Call (Workman\'s Comp). Not sure about your coverage? Call (954) 358-5001 and we\'ll verify for you. Fax: (954) 358-5008.'
+    answer: '',
+    isInsuranceList: true
   },
   {
     question: 'What areas do you serve?',
@@ -91,23 +124,53 @@ export default function FAQPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </CardDescription>
-                    {faq.question === 'What insurances do you accept?' && (
-                      <div className="mt-6 pt-6 border-t border-gray-200">
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                          {INSURANCE_BRANDS.map((brand) => (
-                            <div key={brand.name} className="flex flex-col items-center min-w-[44px]">
-                              <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-lg flex items-center justify-center p-2 hover:bg-gray-100 transition-colors duration-200">
-                                <span className="text-xs font-medium text-gray-700 text-center px-2 py-1 bg-gray-200 rounded-full">
-                                  {brand.name}
-                                </span>
+                    {faq.isInsuranceList ? (
+                      <div className="space-y-6">
+                        {/* Major Insurance Providers */}
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Major Insurance Providers</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {INSURANCE_PROVIDERS.map((provider) => (
+                              <div key={provider.name} className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                                <div className={`flex-shrink-0 w-12 h-8 mr-3 flex items-center justify-center rounded text-xs font-bold ${provider.fallbackColor}`}>
+                                  {provider.name.charAt(0)}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="text-sm font-medium text-gray-900">{provider.name}</div>
+                                  <div className="text-xs text-gray-600">{provider.details}</div>
+                                </div>
+                                <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Other Coverage Options */}
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Other Coverage Options</h4>
+                          <div className="space-y-2">
+                            {OTHER_COVERAGE.map((coverage, index) => (
+                              <div key={index} className="flex items-start">
+                                <Check className="h-4 w-4 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                                <span className="text-sm text-gray-700">{coverage}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Contact for Verification */}
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                          <div className="text-sm text-blue-800">
+                            <p className="font-medium mb-1">Not sure about your coverage?</p>
+                            <p>Call <a href="tel:+19543585001" className="font-semibold hover:underline">(954) 358-5001</a> and we'll verify for you.</p>
+                            <p className="text-xs text-blue-600 mt-1">Fax: (954) 358-5008</p>
+                          </div>
                         </div>
                       </div>
+                    ) : (
+                      <CardDescription className="text-base text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </CardDescription>
                     )}
                   </CardContent>
                 </Card>
