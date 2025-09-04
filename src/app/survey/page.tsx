@@ -180,28 +180,6 @@ export default function SurveyPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-700 text-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Thank You for Your Feedback
-            </h2>
-            <p className="text-lg mb-8 text-white/90">
-              Your input helps us continue providing exceptional home healthcare 
-              services to families throughout Broward County.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                Complete Survey Now
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-gray-700" asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

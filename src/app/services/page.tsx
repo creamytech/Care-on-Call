@@ -288,38 +288,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-spacing bg-[hsl(var(--brand))] text-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2>
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg mb-8 text-white/90">
-              Contact us today to discuss your healthcare needs and learn how 
-              we can provide the quality care you deserve.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                asChild 
-                className="bg-white text-[hsl(var(--brand))] hover:bg-white/90"
-              >
-                <a href="tel:+19543585001">Call (954) 358-5001</a>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[hsl(var(--brand))] transition-colors duration-200" 
-                asChild
-              >
-                <Link href="/contact">Request Information</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

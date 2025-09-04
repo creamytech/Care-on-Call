@@ -189,28 +189,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-700 text-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Experience the Care on Call Difference
-            </h2>
-            <p className="text-lg mb-8 text-white/90">
-              Contact us today to learn how our professional, compassionate healthcare 
-              team can provide the quality care you or your loved one deserves.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="tel:954-358-5001">Call (954) 358-5001</a>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-gray-700" asChild>
-                <Link href="/contact">Get Started Today</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
