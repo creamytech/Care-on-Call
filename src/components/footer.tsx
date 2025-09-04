@@ -74,7 +74,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <h3 className="text-xl font-bold text-white mb-2">Care on Call</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-100 text-sm leading-relaxed">
                 Providing compassionate, professional home healthcare services 
                 throughout Broward County since our founding. Your trusted partner 
                 in quality home care.
@@ -84,7 +84,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 text-[hsl(var(--brand))] mt-1 mr-3 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
+                <div className="text-sm text-gray-100">
                   <p>211 East Prospect Road, NE 44th St.</p>
                   <p>Fort Lauderdale, FL 33334</p>
                 </div>
@@ -92,8 +92,8 @@ export function Footer() {
               
               <div className="flex items-center">
                 <Phone className="h-4 w-4 text-[hsl(var(--brand))] mr-3 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
-                  <a href="tel:+19543585001" className="hover:text-[hsl(var(--brand))] transition-colors">
+                <div className="text-sm text-gray-100">
+                  <a href="tel:+19543585001" className="text-gray-100 hover:text-[hsl(var(--brand))] transition-colors">
                     (954) 358-5001
                   </a>
                 </div>
@@ -103,7 +103,7 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-[hsl(var(--brand))] mr-3 flex-shrink-0" />
                 <a 
                   href="mailto:info@care-on-call.com"
-                  className="text-sm text-gray-300 hover:text-[hsl(var(--brand))] transition-colors"
+                  className="text-sm text-gray-100 hover:text-[hsl(var(--brand))] transition-colors"
                 >
                   info@care-on-call.com
                 </a>
@@ -119,7 +119,7 @@ export function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block text-sm text-gray-300 hover:text-[hsl(var(--brand))] transition-colors duration-200"
+                  className="block text-sm text-gray-100 hover:text-[hsl(var(--brand))] transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -130,7 +130,7 @@ export function Footer() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="block text-xs text-gray-400 hover:text-[hsl(var(--brand))] transition-colors duration-200 mb-1"
+                    className="block text-xs text-gray-300 hover:text-[hsl(var(--brand))] transition-colors duration-200 mb-1"
                   >
                     {link.name}
                   </Link>
@@ -144,7 +144,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold text-white mb-6">Our Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service} className="text-sm text-gray-300 flex items-start">
+                <li key={service} className="text-sm text-gray-100 flex items-start">
                   <div className="w-1.5 h-1.5 bg-[hsl(var(--brand))] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   {service}
                 </li>
@@ -168,16 +168,16 @@ export function Footer() {
               <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                 <div className="text-sm">
                   <p className="font-medium text-[hsl(var(--brand))] mb-1">Licensed & Insured</p>
-                  <p className="text-gray-300 text-xs">Florida License # 299993274</p>
-                  <p className="text-gray-300 text-xs">ACHC Accredited</p>
+                  <p className="text-gray-200 text-xs">Florida License # 299993274</p>
+                  <p className="text-gray-200 text-xs">ACHC Accredited</p>
                 </div>
               </div>
               
               <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                 <div className="text-sm">
                   <p className="font-medium text-[hsl(var(--brand))] mb-1">24/7 Availability</p>
-                  <p className="text-gray-300 text-xs">Emergency on-call services</p>
-                  <p className="text-gray-300 text-xs">Broward County coverage</p>
+                  <p className="text-gray-200 text-xs">Emergency on-call services</p>
+                  <p className="text-gray-200 text-xs">Broward County coverage</p>
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ export function Footer() {
                   <span className="sr-only">Follow Care on Call on Facebook</span>
                 </a>
               </div>
-              <p className="text-xs text-gray-400 mt-3 text-center">Stay connected for health tips & updates</p>
+              <p className="text-xs text-gray-300 mt-3 text-center">Stay connected for health tips & updates</p>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-700 bg-gray-900">
         <div className="container py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
             <div className="text-center md:text-left">
               <p>&copy; {new Date().getFullYear()} Care on Call Home Healthcare. All rights reserved.</p>
             </div>
