@@ -109,13 +109,13 @@ export default function RootLayout({
         {/* Skip Links for Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand text-white px-4 py-2 rounded-md z-50 focus:z-[100]"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gray-800 text-white px-4 py-2 rounded-md z-50 focus:z-[100]"
         >
           Skip to main content
         </a>
         <a
           href="#navigation"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-40 bg-brand text-white px-4 py-2 rounded-md z-50 focus:z-[100]"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-40 bg-gray-800 text-white px-4 py-2 rounded-md z-50 focus:z-[100]"
         >
           Skip to navigation
         </a>

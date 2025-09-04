@@ -88,7 +88,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in px-4">
               <a 
                 href="tel:+19543585001" 
-                className="h-12 px-8 py-3 rounded-lg bg-white text-[hsl(var(--brand))] font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                className="h-12 px-8 py-3 rounded-lg bg-white text-gray-700 font-bold text-base grid place-items-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 <span className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
@@ -139,13 +139,13 @@ export default function Home() {
                     }}
                   />
                   {/* Fallback icon */}
-                  <div className="w-12 h-12 bg-[hsl(var(--brand))]/10 rounded-lg flex items-center justify-center hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
-                    <service.icon className="h-6 w-6 text-[hsl(var(--brand))] group-hover:text-[hsl(var(--brand-700))] transition-colors duration-300" />
+                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hidden group-hover:bg-gray-200 transition-colors duration-300">
+                    <service.icon className="h-6 w-6 text-gray-700 group-hover:text-gray-800 transition-colors duration-300" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">{service.description}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-[hsl(var(--brand))] font-medium">
+                <span className="mt-4 inline-flex items-center gap-1 text-gray-700 font-medium">
                   Learn more <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </span>
               </article>
@@ -222,9 +222,9 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="bg-[hsl(var(--brand))]/5 p-8 rounded-lg">
+            <div className="bg-gray-50 p-8 rounded-lg">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[hsl(var(--brand))] rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-700 rounded-full mb-6">
                   <MapPin className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-700 mb-4">
@@ -257,7 +257,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-12">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-8 sm:gap-12">
             {/* ACHC Gold Seal */}
             <div className="flex flex-col items-center group cursor-pointer">
               <Image
@@ -273,8 +273,8 @@ export default function Home() {
                 }}
               />
               {/* Fallback badge */}
-              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
-                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
+                <Award className="h-10 w-10 text-gray-700" />
               </div>
               <span className="text-sm text-gray-600 text-center font-medium">ACHC<br/>Accredited</span>
             </div>
@@ -294,8 +294,8 @@ export default function Home() {
                 }}
               />
               {/* Fallback badge */}
-              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
-                <Shield className="h-10 w-10 text-[hsl(var(--brand))]" />
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
+                <Shield className="h-10 w-10 text-gray-700" />
               </div>
               <span className="text-sm text-gray-600 text-center font-medium">Medicare<br/>Certified</span>
             </div>
@@ -315,8 +315,8 @@ export default function Home() {
                 }}
               />
               {/* Fallback badge */}
-              <div className="w-20 h-20 bg-[hsl(var(--brand))]/10 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-[hsl(var(--brand))]/20 transition-colors duration-300">
-                <Award className="h-10 w-10 text-[hsl(var(--brand))]" />
+              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 hidden group-hover:bg-gray-200 transition-colors duration-300">
+                <Award className="h-10 w-10 text-gray-700" />
               </div>
               <span className="text-sm text-gray-600 text-center font-medium">FL Licensed<br/>#299993274</span>
             </div>

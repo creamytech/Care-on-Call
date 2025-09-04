@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full text-center px-6">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-brand/10 rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gray-100 rounded-full mb-6">
             <span className="text-4xl font-bold text-gray-700">404</span>
           </div>
           

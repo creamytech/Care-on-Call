@@ -157,14 +157,14 @@ export default function ServicesPage() {
       {/* Services Navigation */}
       <section className="sticky top-20 z-40 bg-white/95 backdrop-blur border-b border-black/10 py-4">
         <div className="container">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+          <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4">
             {serviceCategories.map((category, index) => {
               const serviceId = category.title.toLowerCase().replace(/\s+/g, '-').replace('/', '-')
               return (
                 <button
                   key={category.title}
                   onClick={() => scrollToService(serviceId)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`px-2 sm:px-3 md:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                     activeService === serviceId
                       ? 'bg-[hsl(var(--brand))] text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -185,7 +185,7 @@ export default function ServicesPage() {
             {careOptions.map((option) => (
               <Card key={option.title} className="text-center">
                 <CardHeader>
-                  <div className="mx-auto w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="mx-auto w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                     <option.icon className="h-6 w-6 text-gray-700" />
                   </div>
                   <CardTitle className="text-lg">{option.title}</CardTitle>
@@ -263,21 +263,21 @@ export default function ServicesPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Licensed & Insured</h3>
                 <p className="text-gray-600 text-sm">State of Florida License # 299993274</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">24/7 Availability</h3>
                 <p className="text-gray-600 text-sm">Nurses available for admissions and urgent situations</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Compassionate Care</h3>

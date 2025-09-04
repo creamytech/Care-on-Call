@@ -60,7 +60,7 @@ export default function SurveyPage() {
             </div>
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-6">
                   <MessageSquare className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-700 mb-4">
@@ -95,7 +95,7 @@ export default function SurveyPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                     <Heart className="h-6 w-6 text-gray-700" />
                   </div>
                   <CardTitle className="text-xl">Anonymous Responses</CardTitle>
@@ -110,7 +110,7 @@ export default function SurveyPage() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                     <MessageSquare className="h-6 w-6 text-gray-700" />
                   </div>
                   <CardTitle className="text-xl">Constructive Feedback</CardTitle>
@@ -140,7 +140,7 @@ export default function SurveyPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Phone</h3>
@@ -152,7 +152,7 @@ export default function SurveyPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MessageSquare className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Email</h3>
@@ -165,7 +165,7 @@ export default function SurveyPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="h-8 w-8 text-gray-700" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">In Person</h3>
@@ -182,7 +182,7 @@ export default function SurveyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-700 text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">

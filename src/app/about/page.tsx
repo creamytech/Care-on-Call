@@ -88,7 +88,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-6">
                   <Heart className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-700 mb-4">
@@ -122,7 +122,7 @@ export default function AboutPage() {
             {qualityFeatures.map((feature) => (
               <Card key={feature.title} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="mx-auto w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+                  <div className="mx-auto w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-gray-700" />
                   </div>
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
@@ -142,7 +142,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-brand/5 p-8 rounded-lg">
+            <div className="bg-gray-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-gray-700 mb-6">
                 License & Accreditation
               </h3>
@@ -192,7 +192,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-600 to-gray-700 text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
