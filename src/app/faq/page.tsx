@@ -60,7 +60,7 @@ export default function FAQPage() {
       <section className="bg-gradient-to-r from-brand-50 to-brand-100 py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-brand mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
               Frequently Asked Questions
             </h1>
             <p className="text-xl text-gray-700 mb-8">
@@ -78,7 +78,7 @@ export default function FAQPage() {
               {faqs.map((faq, index) => (
                 <Card key={index} className="border-l-4 border-l-brand hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
-                    <CardTitle className="text-lg text-brand flex items-center">
+                    <CardTitle className="text-lg text-gray-700 flex items-center">
                       {faq.question}
                     </CardTitle>
                   </CardHeader>
@@ -98,7 +98,7 @@ export default function FAQPage() {
       <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-brand mb-6">
+            <h2 className="text-3xl font-bold text-gray-700 mb-6">
               Still Have Questions?
             </h2>
             <p className="text-lg text-gray-700 mb-8">

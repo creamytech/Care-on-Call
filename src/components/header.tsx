@@ -41,7 +41,7 @@ export function Header() {
                     if (sibling) sibling.style.display = 'block';
                   }}
                 />
-                <div className="text-2xl font-bold text-brand hidden">
+                <div className="text-2xl font-bold text-gray-700 hidden">
                   Care on Call
                 </div>
               </div>
@@ -54,7 +54,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-brand transition-all duration-300 text-sm font-medium relative group py-2"
+                className="text-gray-700 hover:text-gray-700 transition-all duration-300 text-sm font-medium relative group py-2"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
@@ -80,7 +80,7 @@ export function Header() {
           <div className="lg:hidden">
             <button
               type="button"
-              className="p-2 text-gray-700 hover:text-brand hover:bg-gray-100 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+              className="p-2 text-gray-700 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close main menu' : 'Open main menu'}
@@ -104,7 +104,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

@@ -112,7 +112,7 @@ export default function Home() {
       <section className="section-spacing bg-[hsl(var(--muted))]">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
               Our Healthcare Services
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -164,7 +164,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
               What Our Families Say
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -187,7 +187,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-sm">
-                    <p className="font-semibold text-brand">{testimonial.name}</p>
+                    <p className="font-semibold text-gray-700">{testimonial.name}</p>
                     <p className="text-gray-500">{testimonial.location}</p>
                   </div>
                 </CardContent>
@@ -202,7 +202,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-brand mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
                 Care You Can Trust
               </h2>
               <p className="text-lg text-gray-700 mb-8">
@@ -227,7 +227,7 @@ export default function Home() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-[hsl(var(--brand))] rounded-full mb-6">
                   <MapPin className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-brand mb-4">
+                <h3 className="text-2xl font-bold text-gray-700 mb-4">
                   Serving Broward County
                 </h3>
                 <p className="text-gray-700 mb-6">
@@ -249,7 +249,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-brand mb-4">
+            <h2 className="text-2xl font-bold text-gray-700 mb-4">
               Trusted & Accredited
             </h2>
             <p className="text-gray-700">

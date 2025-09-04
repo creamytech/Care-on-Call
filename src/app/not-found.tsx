@@ -10,7 +10,7 @@ export default function NotFoundPage() {
       <div className="max-w-md w-full text-center px-6">
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-24 h-24 bg-brand/10 rounded-full mb-6">
-            <span className="text-4xl font-bold text-brand">404</span>
+            <span className="text-4xl font-bold text-gray-700">404</span>
           </div>
           
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -51,17 +51,17 @@ export default function NotFoundPage() {
             <p className="mb-2">Need immediate assistance?</p>
             <div className="space-y-1">
               <p>
-                <a href="tel:954-358-5001" className="text-brand hover:underline font-medium">
+                <a href="tel:954-358-5001" className="text-gray-700 hover:underline font-medium">
                   (954) 358-5001
                 </a>
               </p>
               <p>
-                <a href="tel:877-255-9090" className="text-brand hover:underline font-medium">
+                <a href="tel:877-255-9090" className="text-gray-700 hover:underline font-medium">
                   1-877-255-9090
                 </a>
               </p>
               <p>
-                <a href="mailto:info@care-on-call.com" className="text-brand hover:underline font-medium">
+                <a href="mailto:info@care-on-call.com" className="text-gray-700 hover:underline font-medium">
                   info@care-on-call.com
                 </a>
               </p>

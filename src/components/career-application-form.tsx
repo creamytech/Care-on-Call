@@ -166,7 +166,7 @@ export function CareerApplicationForm() {
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
               Start Your Career with Care on Call
             </h2>
             <p className="text-lg text-gray-600">
@@ -197,7 +197,7 @@ export function CareerApplicationForm() {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 {/* Personal Information */}
                 <div>
-                  <h3 className="text-lg font-semibold text-brand mb-4">Personal Information</h3>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-4">Personal Information</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
@@ -263,7 +263,7 @@ export function CareerApplicationForm() {
 
                 {/* Position Information */}
                 <div>
-                  <h3 className="text-lg font-semibold text-brand mb-4">Position Information</h3>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-4">Position Information</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label htmlFor="position">Position Applied For *</Label>
@@ -332,13 +332,13 @@ export function CareerApplicationForm() {
 
                 {/* Resume Upload */}
                 <div>
-                  <h3 className="text-lg font-semibold text-brand mb-4">Resume</h3>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-4">Resume</h3>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
                     <div className="text-center">
                       <Upload className="mx-auto h-12 w-12 text-gray-400" />
                       <div className="mt-4">
                         <Label htmlFor="resume" className="cursor-pointer">
-                          <span className="text-brand font-medium">Upload your resume</span>
+                          <span className="text-gray-700 font-medium">Upload your resume</span>
                           <span className="text-gray-600"> or drag and drop</span>
                         </Label>
                         <Input
@@ -422,11 +422,11 @@ export function CareerApplicationForm() {
           <div className="mt-8 text-center text-gray-600">
             <p>
               Questions about employment opportunities? Call{' '}
-              <a href="tel:954-358-5001" className="text-brand hover:underline">
+              <a href="tel:954-358-5001" className="text-gray-700 hover:underline">
                 (954) 358-5001
               </a>{' '}
               or email{' '}
-              <a href="mailto:info@care-on-call.com" className="text-brand hover:underline">
+              <a href="mailto:info@care-on-call.com" className="text-gray-700 hover:underline">
                 info@care-on-call.com
               </a>
             </p>

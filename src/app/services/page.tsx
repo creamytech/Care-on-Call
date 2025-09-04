@@ -186,7 +186,7 @@ export default function ServicesPage() {
               <Card key={option.title} className="text-center">
                 <CardHeader>
                   <div className="mx-auto w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
-                    <option.icon className="h-6 w-6 text-brand" />
+                    <option.icon className="h-6 w-6 text-gray-700" />
                   </div>
                   <CardTitle className="text-lg">{option.title}</CardTitle>
                 </CardHeader>
@@ -253,7 +253,7 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-6">
               Quality Care You Can Trust
             </h2>
             <p className="text-lg text-gray-600 mb-8">
@@ -264,23 +264,23 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-brand" />
+                  <Shield className="h-8 w-8 text-gray-700" />
                 </div>
-                <h3 className="text-lg font-semibold text-brand mb-2">Licensed & Insured</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Licensed & Insured</h3>
                 <p className="text-gray-600 text-sm">State of Florida License # 299993274</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-brand" />
+                  <Users className="h-8 w-8 text-gray-700" />
                 </div>
-                <h3 className="text-lg font-semibold text-brand mb-2">24/7 Availability</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">24/7 Availability</h3>
                 <p className="text-gray-600 text-sm">Nurses available for admissions and urgent situations</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-brand" />
+                  <Heart className="h-8 w-8 text-gray-700" />
                 </div>
-                <h3 className="text-lg font-semibold text-brand mb-2">Compassionate Care</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Compassionate Care</h3>
                 <p className="text-gray-600 text-sm">Tailored to meet your individual needs</p>
               </div>
             </div>
