@@ -75,7 +75,7 @@ export default function Home() {
         <div className="relative z-10">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
               Care on Call Home Healthcare
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white animate-fade-in [animation-delay:200ms]">
