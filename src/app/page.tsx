@@ -61,16 +61,18 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-600 to-gray-700 text-white section-spacing overflow-hidden">
-        {/* Background image - will show when you add homepage-hero.jpg */}
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white section-spacing overflow-hidden">
+        {/* Background image with blue tint */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/banners/homepage-hero.jpg"
             alt="Care on Call Home Healthcare"
             fill
-            className="object-cover opacity-20"
+            className="object-cover"
             onError={(e) => e.currentTarget.style.display = 'none'}
           />
+          {/* Blue tint overlay */}
+          <div className="absolute inset-0 bg-blue-700/60"></div>
         </div>
         <div className="relative z-10">
         <div className="container">
@@ -82,7 +84,7 @@ export default function Home() {
               Our family helping your family!
             </p>
             <p className="text-lg mb-12 text-gray-100 animate-fade-in">
-              Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
+              Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in px-4">
               <a 
@@ -104,6 +106,70 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </div>
+      </section>
+
+      {/* Home Care Elite Award Section */}
+      <section className="section-spacing bg-gradient-to-br from-yellow-50 to-amber-50 border-y border-yellow-200/50">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full mb-4 shadow-lg">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[hsl(var(--brand))]">
+                Recipient of the Prestigious Home Care Elite Award
+              </h2>
+              <p className="text-xl text-gray-700 mb-6">
+                Recognized for exceptional patient outcomes and quality care excellence
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200/50 shadow-sm">
+                  <h3 className="text-xl font-semibold text-[hsl(var(--brand))] mb-3">
+                    What This Award Means
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Top 25% of home care agencies nationwide for patient satisfaction</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Superior clinical outcomes and quality measures</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Exceptional caregiver retention and training standards</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Commitment to continuous quality improvement</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-lg">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
+                    <Award className="h-16 w-16 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[hsl(var(--brand))] mb-2">
+                    Home Care Elite
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-4">
+                    Excellence in Home Healthcare
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    This prestigious recognition is awarded annually to home care agencies demonstrating the highest standards of care and patient satisfaction.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -205,7 +271,7 @@ export default function Home() {
                 Care You Can Trust
               </h2>
               <p className="text-lg text-[hsl(var(--brand))] mb-8">
-                Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
+                Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {trustFeatures.map((feature) => (

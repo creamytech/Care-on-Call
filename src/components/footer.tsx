@@ -76,7 +76,7 @@ export function Footer() {
             <div className="mb-6">
               <h3 className="text-xl font-bold text-white mb-2">Care on Call</h3>
               <p className="text-gray-100 text-sm leading-relaxed">
-                Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
+                Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.
               </p>
             </div>
             
@@ -169,13 +169,14 @@ export function Footer() {
                   <p className="font-medium text-gray-300 mb-1">Licensed & Insured</p>
                   <p className="text-gray-200 text-xs">Florida License # 299993274</p>
                   <p className="text-gray-200 text-xs">ACHC Accredited</p>
+                  <p className="text-gray-200 text-xs">Medicare Certified</p>
                 </div>
               </div>
               
               <div className="bg-gray-700 rounded-lg p-4 border border-gray-600">
                 <div className="text-sm">
                   <p className="font-medium text-gray-300 mb-1">24/7 Availability</p>
-                  <p className="text-gray-200 text-xs">Emergency on-call services</p>
+                  <p className="text-gray-200 text-xs">On-call services</p>
                   <p className="text-gray-200 text-xs">Broward County coverage</p>
                 </div>
               </div>

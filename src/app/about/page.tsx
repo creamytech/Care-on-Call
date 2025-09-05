@@ -56,7 +56,7 @@ export default function AboutPage() {
               Care You Can Trust
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.
+              Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.
             </p>
           </div>
         </div>

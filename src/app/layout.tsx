@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Care on Call Home Healthcare - Fort Lauderdale, FL',
-  description: 'Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.',
+  description: 'Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.',
   keywords: 'home healthcare, Fort Lauderdale, nursing, therapy, home care, Florida',
   authors: [{ name: 'Care on Call Home Healthcare' }],
   icons: {
@@ -41,7 +41,7 @@ export default function RootLayout({
     "@type": "HealthcareOrganization",
     "name": "Care on Call Home Healthcare",
     "alternateName": "Care on Call",
-    "description": "Providing compassionate, professional home healthcare services throughout Broward County for 17+ years. Your trusted partner in quality home care.",
+    "description": "Providing compassionate, professional home healthcare services throughout Broward County since 2008. Your trusted partner in quality home care.",
     "url": "https://www.care-on-call.com",
     "logo": "https://www.care-on-call.com/images/logos/care-on-call-logo.png",
     "image": "https://www.care-on-call.com/images/logos/care-on-call-logo.png",
