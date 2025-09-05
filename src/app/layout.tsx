@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Care on Call Home Healthcare' }],
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '16x16 32x32', type: 'image/x-icon' },
+      { url: '/faviconfinal.ico', sizes: '16x16 32x32', type: 'image/x-icon' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/faviconfinal.ico',
     apple: '/images/logos/care-on-call-logo.png',
   },
   openGraph: {
@@ -115,8 +115,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/faviconfinal.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/faviconfinal.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
