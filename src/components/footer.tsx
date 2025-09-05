@@ -227,7 +227,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-gray-300 transition-colors"
                 >
-                  Crafted by Pixel Boba
+                  Brewed by Pixel Boba
                 </a>
               </p>
             </div>
