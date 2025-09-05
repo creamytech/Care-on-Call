@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Phone, Mail, MapPin, Facebook, Instagram, ArrowRight } from 'lucide-react'
 
@@ -225,9 +226,16 @@ export function Footer() {
                   href="https://www.pixelboba.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-gray-300 transition-colors inline-flex items-center gap-1"
                 >
                   Brewed by Pixel Boba
+                  <Image
+                    src="/images/pixel boba/pixelbobaicon.png"
+                    alt="Pixel Boba"
+                    width={12}
+                    height={12}
+                    className="inline-block"
+                  />
                 </a>
               </p>
             </div>
