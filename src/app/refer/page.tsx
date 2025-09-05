@@ -28,6 +28,9 @@ const referralSchema = z.object({
   urgency: z.enum(['immediate', 'within_week', 'within_month', 'flexible']),
   insuranceInfo: z.string().min(5, 'Please provide insurance information'),
   additionalInfo: z.string().optional(),
+  
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 type ReferralFormData = z.infer<typeof referralSchema>
@@ -82,6 +85,7 @@ export default function ReferralPage() {
       urgency: 'flexible',
       insuranceInfo: '',
       additionalInfo: '',
+      website: '',
     },
   })
 
@@ -232,6 +236,17 @@ export default function ReferralPage() {
                 )}
 
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                  {/* Honeypot field - hidden from users but visible to bots */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                    <Label htmlFor="website">Website</Label>
+                    <Input
+                      id="website"
+                      {...form.register('website')}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
                   {/* Step Indicator in Form */}
                   <div className="mb-8 p-4 bg-[hsl(var(--brand))]/5 rounded-lg border border-[hsl(var(--brand))]/20">
                     <div className="flex items-center justify-between">

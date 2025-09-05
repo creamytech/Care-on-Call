@@ -14,6 +14,8 @@ const careerSchema = z.object({
   resume: z.string().optional(), // Base64 encoded file
   resumeFileName: z.string().optional(),
   resumeFileType: z.string().optional(),
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 export async function POST(request: NextRequest) {
@@ -22,6 +24,15 @@ export async function POST(request: NextRequest) {
     
     // Validate request data
     const validatedData = careerSchema.parse(body)
+    
+    // Bot protection: Check honeypot field
+    if (validatedData.website && validatedData.website.length > 0) {
+      console.log('Bot submission detected via honeypot field')
+      return NextResponse.json(
+        { error: 'Invalid submission' },
+        { status: 400 }
+      )
+    }
     
     // Check environment variables
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {

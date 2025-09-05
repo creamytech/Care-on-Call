@@ -8,6 +8,8 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   subject: z.string().min(5, 'Subject must be at least 5 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 export async function POST(request: NextRequest) {
@@ -16,6 +18,15 @@ export async function POST(request: NextRequest) {
     
     // Validate request data
     const validatedData = contactSchema.parse(body)
+    
+    // Bot protection: Check honeypot field
+    if (validatedData.website && validatedData.website.length > 0) {
+      console.log('Bot submission detected via honeypot field')
+      return NextResponse.json(
+        { error: 'Invalid submission' },
+        { status: 400 }
+      )
+    }
     
     // Check environment variables
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {

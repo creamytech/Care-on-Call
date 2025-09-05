@@ -18,6 +18,9 @@ const referralSchema = z.object({
   urgency: z.enum(['immediate', 'within_week', 'within_month', 'flexible']),
   insuranceInfo: z.string().min(5, 'Please provide insurance information'),
   additionalInfo: z.string().optional(),
+  
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 export async function POST(request: NextRequest) {
@@ -26,6 +29,15 @@ export async function POST(request: NextRequest) {
     
     // Validate request data
     const validatedData = referralSchema.parse(body)
+    
+    // Bot protection: Check honeypot field
+    if (validatedData.website && validatedData.website.length > 0) {
+      console.log('Bot submission detected via honeypot field')
+      return NextResponse.json(
+        { error: 'Invalid submission' },
+        { status: 400 }
+      )
+    }
     
     // Check environment variables
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {

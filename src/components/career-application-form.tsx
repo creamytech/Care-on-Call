@@ -21,6 +21,8 @@ const careerSchema = z.object({
   experience: z.string().min(1, 'Please specify your years of experience'),
   availability: z.string().min(2, 'Please specify your availability'),
   message: z.string().optional(),
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 type CareerFormData = z.infer<typeof careerSchema>
@@ -71,6 +73,7 @@ export function CareerApplicationForm() {
       experience: '',
       availability: '',
       message: '',
+      website: '',
     },
   })
 
@@ -195,6 +198,17 @@ export function CareerApplicationForm() {
               )}
 
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                {/* Honeypot field - hidden from users but visible to bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                  <Label htmlFor="website">Website</Label>
+                  <Input
+                    id="website"
+                    {...form.register('website')}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 {/* Personal Information */}
                 <div>
                   <h3 className="text-lg font-semibold text-gray-700 mb-4">Personal Information</h3>

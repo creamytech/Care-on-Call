@@ -18,6 +18,8 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   subject: z.string().min(5, 'Subject must be at least 5 characters'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
+  // Honeypot field for bot protection
+  website: z.string().max(0, 'Bot detected'),
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
@@ -40,6 +42,7 @@ export default function ContactPage() {
       phone: '',
       subject: '',
       message: '',
+      website: '',
     },
   })
 
@@ -203,6 +206,17 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    {/* Honeypot field - hidden from users but visible to bots */}
+                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                      <Label htmlFor="website">Website</Label>
+                      <Input
+                        id="website"
+                        {...form.register('website')}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Name *</Label>
