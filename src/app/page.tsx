@@ -118,35 +118,39 @@ export default function Home() {
                 <Award className="h-8 w-8 text-white" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[hsl(var(--brand))]">
-                Recipient of the Prestigious Home Care Elite Award
+                🏆 Top Agency of the 2014 HomeCare Elite
               </h2>
               <p className="text-xl text-gray-700 mb-6">
-                Recognized for exceptional patient outcomes and quality care excellence
+                Among the top 25% of home health agencies nationwide
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200/50 shadow-sm">
-                  <h3 className="text-xl font-semibold text-[hsl(var(--brand))] mb-3">
-                    What This Award Means
+                  <p className="text-gray-700 mb-4 leading-relaxed">
+                    Care on Call Home Healthcare of Fort Lauderdale has been recognized as a Top Agency in the 2014 HomeCare Elite, placing among the top 25% of home health agencies nationwide. Out of nearly 10,000 Medicare-certified agencies, only 2,501 earned this distinction.
+                  </p>
+                  
+                  <h3 className="text-lg font-semibold text-[hsl(var(--brand))] mb-3">
+                    This prestigious recognition reflects:
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">Top 25% of home care agencies nationwide for patient satisfaction</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">Superior clinical outcomes and quality measures</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">Exceptional caregiver retention and training standards</span>
+                      <span className="text-gray-700">Superior clinical outcomes and patient satisfaction</span>
                     </li>
                     <li className="flex items-start">
                       <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">Commitment to continuous quality improvement</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Exceptional caregiver training and retention</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">Strong financial and operational performance</span>
                     </li>
                   </ul>
                 </div>
@@ -154,18 +158,28 @@ export default function Home() {
               
               <div className="text-center">
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-lg">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
-                    <Award className="h-16 w-16 text-white" />
+                  <div className="w-48 h-32 mx-auto mb-6 relative">
+                    <Image
+                      src="/images/trust/HomeCareElite.jpg"
+                      alt="HomeCare Elite Top Agency Award"
+                      fill
+                      className="object-contain rounded-lg shadow-lg"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold text-[hsl(var(--brand))] mb-2">
-                    Home Care Elite
+                    HomeCare Elite
                   </h3>
                   <p className="text-lg text-gray-700 mb-4">
-                    Excellence in Home Healthcare
+                    2014 Top Agency Award
                   </p>
-                  <p className="text-sm text-gray-600">
-                    This prestigious recognition is awarded annually to home care agencies demonstrating the highest standards of care and patient satisfaction.
-                  </p>
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <p className="text-sm text-gray-800 italic leading-relaxed">
+                      "As a Medicare Certified, ACHC Accredited agency, we are proud to provide the highest level of care to Broward County families. This award is a testament to our staff's dedication and our mission to deliver excellence at home."
+                    </p>
+                    <p className="text-xs text-gray-600 mt-2 font-medium">
+                      — Hector L. Moras, CEO
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
