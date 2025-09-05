@@ -226,9 +226,9 @@ export function Footer() {
                   href="https://www.pixelboba.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-gray-300 transition-colors inline-flex items-center gap-1"
+                  className="text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center gap-1"
                 >
-                  Brewed by Pixel Boba
+                  brewed by pixel boba
                   <Image
                     src="/images/pixelbobaicon.png"
                     alt="Pixel Boba"
