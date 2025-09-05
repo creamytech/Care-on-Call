@@ -64,6 +64,7 @@ export default function ReferralPage() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(0)
 
   const steps = [
     { number: 1, title: 'Your Information', description: 'Tell us about yourself' },
@@ -90,8 +91,21 @@ export default function ReferralPage() {
   })
 
   const onSubmit = async (data: ReferralFormData) => {
+    // Prevent duplicate submissions within 5 seconds
+    const now = Date.now()
+    if (now - lastSubmissionTime < 5000) {
+      toast.error('Please wait before submitting again.')
+      return
+    }
+
+    // Prevent multiple simultaneous submissions
+    if (isSubmitting) {
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus(null)
+    setLastSubmissionTime(now)
 
     try {
       const response = await fetch('/api/referral', {

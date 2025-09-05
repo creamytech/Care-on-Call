@@ -118,7 +118,7 @@ export default function Home() {
                 <Award className="h-8 w-8 text-white" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[hsl(var(--brand))]">
-                🏆 Top Agency of the 2014 HomeCare Elite
+                Top Agency of the 2014 HomeCare Elite
               </h2>
               <p className="text-xl text-gray-700 mb-6">
                 Among the top 25% of home health agencies nationwide
@@ -158,12 +158,12 @@ export default function Home() {
               
               <div className="text-center">
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-lg">
-                  <div className="w-48 h-32 mx-auto mb-6 relative">
+                  <div className="w-56 h-40 mx-auto mb-6 relative overflow-hidden rounded-lg">
                     <Image
                       src="/images/trust/HomeCareElite.jpg"
                       alt="HomeCare Elite Top Agency Award"
                       fill
-                      className="object-contain rounded-lg shadow-lg"
+                      className="object-contain"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-[hsl(var(--brand))] mb-2">

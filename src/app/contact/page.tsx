@@ -33,6 +33,7 @@ const officeHours = [
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(0)
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -47,8 +48,21 @@ export default function ContactPage() {
   })
 
   const onSubmit = async (data: ContactFormData) => {
+    // Prevent duplicate submissions within 5 seconds
+    const now = Date.now()
+    if (now - lastSubmissionTime < 5000) {
+      toast.error('Please wait before submitting again.')
+      return
+    }
+
+    // Prevent multiple simultaneous submissions
+    if (isSubmitting) {
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus(null)
+    setLastSubmissionTime(now)
 
     try {
       const response = await fetch('/api/contact', {

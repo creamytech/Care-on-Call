@@ -60,6 +60,7 @@ export function CareerApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
   const [resumeFile, setResumeFile] = useState<File | null>(null)
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(0)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const form = useForm<CareerFormData>({
@@ -109,8 +110,21 @@ export function CareerApplicationForm() {
   }
 
   const onSubmit = async (data: CareerFormData) => {
+    // Prevent duplicate submissions within 5 seconds
+    const now = Date.now()
+    if (now - lastSubmissionTime < 5000) {
+      toast.error('Please wait before submitting again.')
+      return
+    }
+
+    // Prevent multiple simultaneous submissions
+    if (isSubmitting) {
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus(null)
+    setLastSubmissionTime(now)
 
     try {
       let resumeData = null
