@@ -230,7 +230,7 @@ export function Footer() {
                 >
                   Brewed by Pixel Boba
                   <Image
-                    src="/images/pixel boba/pixelbobaicon.png"
+                    src="/images/pixel%20boba/pixelbobaicon.png"
                     alt="Pixel Boba"
                     width={12}
                     height={12}
