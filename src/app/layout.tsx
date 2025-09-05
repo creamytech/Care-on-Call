@@ -16,7 +16,10 @@ export const metadata: Metadata = {
   keywords: 'home healthcare, Fort Lauderdale, nursing, therapy, home care, Florida',
   authors: [{ name: 'Care on Call Home Healthcare' }],
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/images/logos/care-on-call-logo.png',
   },
   openGraph: {
@@ -112,6 +115,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
